@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>มาตรฐานวิชาชีพครู — ครุจิต</title>
+<meta name="description" content="มาตรฐานวิชาชีพครูไทยทั้ง 3 ด้าน: ความรู้และประสบการณ์วิชาชีพ การปฏิบัติงาน และการปฏิบัติตน พร้อมเทียบหลักการสากล">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@500;600;700&family=Sarabun:wght@300;400;500;600;700&family=Mitr:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1A2B45; --ink-soft:#5B6472;
+    --paper:#FBF7EF; --paper-deep:#F0E9D8;
+    --gold:#B6883A; --gold-soft:#ECDFC2;
+    --lacquer:#7C2E28; --lacquer-soft:#F4E2DE;
+    --moss:#3E5B45; --moss-soft:#E2E9DF;
+    --line: rgba(26,43,69,0.13);
+    --radius:16px; --shadow: 0 22px 48px -26px rgba(26,43,69,0.45);
+    --serif:"Noto Serif Thai","Noto Serif",serif;
+    --body:"Sarabun",system-ui,-apple-system,sans-serif;
+    --utility:"Mitr",system-ui,sans-serif;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:var(--serif);color:var(--ink);margin:0;font-weight:600;}
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  svg{display:block;max-width:100%;}
+  ul{margin:0;padding:0;list-style:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .eyebrow{font-family:var(--utility);font-size:13px;letter-spacing:.14em;color:var(--lacquer);font-weight:600;display:inline-flex;align-items:center;gap:10px;margin-bottom:16px;}
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--gold);display:inline-block;}
+  .btn{font-family:var(--utility);font-size:14.5px;font-weight:600;padding:14px 26px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;transition:transform .25s, box-shadow .25s, background .25s;cursor:pointer;border:1.5px solid transparent;}
+  .btn-primary{background:var(--lacquer);color:#fff;box-shadow:0 14px 28px -14px rgba(124,46,40,.55);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{border-color:var(--ink);color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper);}
+  .skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:10px 16px;z-index:999;}
+  .skip:focus{left:8px;top:8px;}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
+
+  header.site{position:sticky;top:0;z-index:100;background:rgba(251,247,239,.86);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s, box-shadow .3s;}
+  header.site.scrolled{border-color:var(--line);box-shadow:0 8px 24px -20px rgba(26,43,69,.4);}
+  nav.bar{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:var(--maxw);margin:0 auto;gap:16px;flex-wrap:wrap;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand svg{width:40px;height:40px;flex-shrink:0;}
+  .brand .name{font-family:var(--serif);font-weight:700;font-size:21px;color:var(--ink);}
+  .brand .tag{display:block;font-family:var(--utility);font-size:10.5px;letter-spacing:.12em;color:var(--ink-soft);font-weight:500;}
+  .navlinks{display:flex;align-items:center;gap:18px;font-family:var(--utility);font-size:13.5px;font-weight:500;flex-wrap:wrap;}
+  .navlinks a{position:relative;padding:4px 0;color:var(--ink);white-space:nowrap;}
+  .navlinks a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--gold);transition:width .25s;}
+  .navlinks a:hover::after{width:100%;}
+  .navlinks a.active{color:var(--lacquer);}
+  .menubtn{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .menubtn span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;}
+
+  .pagehero{padding:64px 0 56px;border-bottom:1px solid var(--line);}
+  .pagehero h1{font-size:clamp(30px,4vw,46px);line-height:1.25;max-width:780px;}
+  .pagehero p.lead{font-size:17.5px;color:var(--ink-soft);max-width:680px;margin-top:18px;}
+  .pagehero .breadcrumb{font-family:var(--utility);font-size:13px;color:var(--ink-soft);margin-bottom:22px;}
+  .pagehero .breadcrumb a{color:var(--lacquer);}
+
+  section{padding:84px 0;}
+  .section-deep{background:var(--paper-deep);}
+  .section-head{max-width:700px;margin-bottom:44px;}
+  .section-head h2{font-size:clamp(26px,3.2vw,36px);line-height:1.3;}
+  .section-head p{color:var(--ink-soft);font-size:16.5px;margin-top:16px;}
+
+  .know-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .know-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 22px 20px;display:flex;gap:16px;align-items:flex-start;box-shadow:var(--shadow);}
+  .know-card .n{font-family:var(--serif);font-size:24px;color:var(--gold);font-weight:700;flex-shrink:0;width:36px;}
+  .know-card h4{font-size:16.5px;line-height:1.4;}
+
+  .perf-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .perf-group{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;}
+  .perf-group h4{font-size:17px;color:var(--lacquer);margin-bottom:16px;}
+  .perf-group ul{display:flex;flex-direction:column;gap:10px;}
+  .perf-group li{font-size:14.5px;color:var(--ink-soft);padding-left:18px;position:relative;}
+  .perf-group li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--gold);}
+
+  .conduct-box{background:var(--ink);color:var(--paper);border-radius:var(--radius);padding:40px;display:flex;gap:30px;align-items:flex-start;flex-wrap:wrap;}
+  .conduct-box h3{color:#fff;font-size:21px;margin-bottom:10px;}
+  .conduct-box p{color:rgba(251,247,239,.85);font-size:15px;max-width:560px;}
+  .conduct-box .btn{margin-top:14px;}
+
+  .callout{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px 36px;display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:flex-start;margin-top:40px;}
+  .callout .icon-wrap{width:44px;height:44px;flex-shrink:0;color:var(--moss);}
+  .callout h4{font-size:18px;margin-bottom:10px;}
+  .callout p{color:var(--ink-soft);font-size:15px;}
+  .callout .src{display:block;margin-top:10px;font-family:var(--utility);font-size:12px;color:var(--gold);}
+
+  .conditions{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .cond{border:1px solid var(--line);border-radius:12px;padding:20px;background:var(--paper-deep);}
+  .cond .num{font-family:var(--utility);font-size:12px;color:var(--gold);font-weight:600;}
+  .cond p{font-size:14px;color:var(--ink);margin-top:8px;}
+
+  .next-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
+  .next-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;gap:10px;}
+  .next-card h4{font-size:18px;}
+  .next-card p{color:var(--ink-soft);font-size:14.5px;}
+
+  footer.site{background:#16233A;color:var(--paper);padding:60px 0 30px;}
+  .foot-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;padding-bottom:30px;border-bottom:1px solid rgba(251,247,239,.14);}
+  .foot-brand{display:flex;align-items:center;gap:10px;}
+  .foot-brand svg{width:32px;height:32px;}
+  .foot-brand .name{font-family:var(--serif);font-size:18px;font-weight:700;color:#fff;}
+  .foot-links{display:flex;gap:24px;font-family:var(--utility);font-size:14px;}
+  .foot-links a{color:rgba(251,247,239,.85);}
+  .foot-links a:hover{color:var(--gold-soft);}
+  .foot-legal{padding-top:22px;font-size:12.5px;color:rgba(251,247,239,.5);}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s, transform .7s;}
+  .reveal.is-visible{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
+
+  @media (max-width:980px){
+    .navlinks{display:none;} .menubtn{display:block;}
+    .know-grid{grid-template-columns:1fr 1fr;}
+    .perf-groups{grid-template-columns:1fr;}
+    .conditions{grid-template-columns:1fr 1fr;}
+    .next-grid{grid-template-columns:1fr;}
+    .callout{grid-template-columns:1fr;}
+  }
+  @media (max-width:600px){
+    .know-grid{grid-template-columns:1fr;}
+    .conditions{grid-template-columns:1fr;}
+    section{padding:56px 0;}
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip">ไปยังเนื้อหาหลัก</a>
+
+<header class="site" id="top">
+  <nav class="bar">
+    <a href="index.html" class="brand">
+      <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="92" stroke="#1A2B45" stroke-width="3" fill="none"/><circle cx="100" cy="100" r="78" stroke="#B6883A" stroke-width="1.6" fill="none"/><path d="M70 142 L130 142 L121 154 L79 154 Z" stroke="#1A2B45" stroke-width="4" fill="none" stroke-linejoin="round"/><line x1="100" y1="142" x2="100" y2="122" stroke="#1A2B45" stroke-width="4"/><path d="M88 122 C86 107,90 94,94 82" stroke="#3E5B45" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M100 122 C100 104,100 90,100 76" stroke="#3E5B45" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M112 122 C114 107,110 94,106 82" stroke="#3E5B45" stroke-width="4" fill="none" stroke-linecap="round"/><g stroke="#7C2E28" stroke-width="4" stroke-linecap="round" transform="translate(100,70)"><line x1="0" y1="0" x2="0" y2="-14"/><line x1="0" y1="0" x2="12" y2="-6"/><line x1="0" y1="0" x2="12" y2="7"/><line x1="0" y1="0" x2="0" y2="14"/><line x1="0" y1="0" x2="-12" y2="7"/><line x1="0" y1="0" x2="-12" y2="-6"/><circle cx="0" cy="0" r="4" fill="#7C2E28" stroke="none"/></g><g stroke="#B6883A" stroke-width="3.4" fill="none" transform="translate(70,110)"><circle cx="0" cy="0" r="5"/><circle cx="9" cy="-4" r="4"/><circle cx="6" cy="7" r="4"/></g><g stroke="#1A2B45" stroke-width="3.4" fill="none" stroke-linecap="round" transform="translate(130,98)"><path d="M0 -20 C -2 -8, -4 -2, -6 4"/><g transform="translate(-6,8)"><line x1="0" y1="0" x2="0" y2="-7"/><line x1="0" y1="0" x2="6" y2="-2"/><line x1="0" y1="0" x2="4" y2="6"/><line x1="0" y1="0" x2="-4" y2="6"/><line x1="0" y1="0" x2="-6" y2="-2"/></g></g></svg>
+      <span><span class="name">ครุจิต</span><span class="tag">KRUJIT · SPIRIT OF TEACHING</span></span>
+    </a>
+    <div class="navlinks">
+      <a href="index.html#pillars">รากฐานสี่ประการ</a>
+      <a href="standards.html" class="active">มาตรฐานวิชาชีพ</a>
+      <a href="ethics.html">จรรยาบรรณ</a>
+      <a href="pathway.html">เส้นทางสู่วิชาชีพ</a>
+      <a href="professionalism.html">หลักวิชาการสากล</a>
+      <a href="knowledge.html">คลังความรู้</a>
+    </div>
+    <button class="menubtn" id="menubtn" aria-label="เปิดเมนู" aria-expanded="false"><span></span><span></span><span></span></button>
+  </nav>
+  <div id="mobilenav" style="display:none;flex-direction:column;gap:4px;padding:0 28px 22px;font-family:var(--utility);font-size:15px;">
+    <a href="index.html#pillars" style="padding:10px 0;border-bottom:1px solid var(--line)">รากฐานสี่ประการ</a>
+    <a href="standards.html" style="padding:10px 0;border-bottom:1px solid var(--line)">มาตรฐานวิชาชีพ</a>
+    <a href="ethics.html" style="padding:10px 0;border-bottom:1px solid var(--line)">จรรยาบรรณ</a>
+    <a href="pathway.html" style="padding:10px 0;border-bottom:1px solid var(--line)">เส้นทางสู่วิชาชีพ</a>
+    <a href="professionalism.html" style="padding:10px 0;border-bottom:1px solid var(--line)">หลักวิชาการสากล</a>
+    <a href="knowledge.html" style="padding:10px 0;">คลังความรู้</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="pagehero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="index.html">ครุจิต</a> / มาตรฐานวิชาชีพ</div>
+      <div class="eyebrow">หลักการที่ยึดถือ</div>
+      <h1>มาตรฐานวิชาชีพครู</h1>
+      <p class="lead">ตามข้อบังคับคุรุสภาว่าด้วยมาตรฐานวิชาชีพ พ.ศ. 2556 และที่แก้ไขเพิ่มเติม ผู้ประกอบวิชาชีพทางการศึกษาทุกคนต้องยึดถือมาตรฐานวิชาชีพ 3 ด้าน ได้แก่ มาตรฐานความรู้และประสบการณ์วิชาชีพ มาตรฐานการปฏิบัติงาน และมาตรฐานการปฏิบัติตน เพื่อสร้างคุณภาพในการประกอบวิชาชีพและความเชื่อมั่นแก่ผู้รับบริการและสังคม</p>
+    </div>
+  </section>
+
+  <!-- KNOWLEDGE -->
+  <section id="knowledge">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">มาตรฐานที่ 1</div>
+        <h2>ความรู้และประสบการณ์วิชาชีพ</h2>
+        <p>ผู้ประกอบวิชาชีพครูต้องมีคุณวุฒิไม่ต่ำกว่าปริญญาตรีทางการศึกษาหรือเทียบเท่า และมีมาตรฐานความรู้ครอบคลุม 11 ด้านดังนี้ พร้อมประสบการณ์ฝึกปฏิบัติการสอนในสถานศึกษาไม่น้อยกว่า 1 ปี ตามหลักเกณฑ์ที่คุรุสภากำหนด</p>
+      </div>
+      <div class="know-grid">
+        <div class="know-card reveal"><span class="n">1</span><h4>ความเป็นครู</h4></div>
+        <div class="know-card reveal"><span class="n">2</span><h4>ปรัชญาการศึกษา</h4></div>
+        <div class="know-card reveal"><span class="n">3</span><h4>ภาษาและวัฒนธรรม</h4></div>
+        <div class="know-card reveal"><span class="n">4</span><h4>จิตวิทยาสำหรับครู</h4></div>
+        <div class="know-card reveal"><span class="n">5</span><h4>หลักสูตร</h4></div>
+        <div class="know-card reveal"><span class="n">6</span><h4>การจัดการเรียนรู้และการจัดการชั้นเรียน</h4></div>
+        <div class="know-card reveal"><span class="n">7</span><h4>การวิจัยเพื่อพัฒนาการเรียนรู้</h4></div>
+        <div class="know-card reveal"><span class="n">8</span><h4>นวัตกรรมและเทคโนโลยีสารสนเทศทางการศึกษา</h4></div>
+        <div class="know-card reveal"><span class="n">9</span><h4>การวัดและการประเมินผลการเรียนรู้</h4></div>
+        <div class="know-card reveal"><span class="n">10</span><h4>การประกันคุณภาพการศึกษา</h4></div>
+        <div class="know-card reveal"><span class="n">11</span><h4>คุณธรรม จริยธรรม และจรรยาบรรณ</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERFORMANCE -->
+  <section class="section-deep" id="performance">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">มาตรฐานที่ 2</div>
+        <h2>การปฏิบัติงาน</h2>
+        <p>กำหนดไว้ 12 ข้อ ครอบคลุมตั้งแต่การพัฒนาวิชาชีพ การออกแบบและจัดการเรียนรู้ ไปจนถึงความร่วมมือกับผู้อื่น สามารถจัดกลุ่มตามลักษณะการทำงานได้ดังนี้</p>
+      </div>
+      <div class="perf-groups">
+        <div class="perf-group reveal">
+          <h4>พัฒนาวิชาชีพและตนเอง</h4>
+          <ul>
+            <li>ปฏิบัติกิจกรรมทางวิชาการเพื่อพัฒนาวิชาชีพครูให้ก้าวหน้าอยู่เสมอ</li>
+            <li>ปฏิบัติตนเป็นแบบอย่างที่ดีแก่ผู้เรียน</li>
+            <li>แสวงหาและให้ข้อมูลข่าวสารในการพัฒนา</li>
+          </ul>
+        </div>
+        <div class="perf-group reveal">
+          <h4>ออกแบบและจัดการเรียนรู้</h4>
+          <ul>
+            <li>ตัดสินใจปฏิบัติกิจกรรมต่าง ๆ โดยคำนึงถึงผลที่จะเกิดแก่ผู้เรียน</li>
+            <li>มุ่งมั่นพัฒนาผู้เรียนให้เติบโตเต็มตามศักยภาพ</li>
+            <li>พัฒนาแผนการสอนให้สามารถปฏิบัติได้จริงในชั้นเรียน</li>
+            <li>พัฒนาสื่อการเรียนการสอนให้มีประสิทธิภาพอยู่เสมอ</li>
+            <li>จัดกิจกรรมการเรียนการสอนให้ผู้เรียนรู้จักวิเคราะห์และคิดสร้างสรรค์</li>
+            <li>สร้างโอกาสให้ผู้เรียนได้เรียนรู้ในทุกสถานการณ์</li>
+          </ul>
+        </div>
+        <div class="perf-group reveal">
+          <h4>ความร่วมมือและความรับผิดชอบ</h4>
+          <ul>
+            <li>รายงานผลการพัฒนาคุณภาพของผู้เรียนได้อย่างมีระบบ</li>
+            <li>ร่วมมือกับผู้อื่นในสถานศึกษาอย่างสร้างสรรค์</li>
+            <li>ร่วมมือกับผู้อื่นในชุมชนอย่างสร้างสรรค์</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONDUCT -->
+  <section id="conduct">
+    <div class="wrap">
+      <div class="conduct-box reveal">
+        <div style="flex:1;min-width:260px;">
+          <span class="eyebrow" style="color:var(--gold-soft);">มาตรฐานที่ 3</span>
+          <h3>การปฏิบัติตน</h3>
+          <p>คือจรรยาบรรณของวิชาชีพตามข้อบังคับคุรุสภาว่าด้วยจรรยาบรรณของวิชาชีพ พ.ศ. 2556 มีทั้งหมด 5 ด้าน 9 ข้อ ครอบคลุมความประพฤติต่อตนเอง ต่อวิชาชีพ ต่อผู้รับบริการ ต่อผู้ร่วมประกอบวิชาชีพ และต่อสังคม</p>
+          <a href="ethics.html" class="btn btn-light" style="border-color:rgba(251,247,239,.55);color:#FBF7EF;">อ่านจรรยาบรรณวิชาชีพฉบับเต็ม →</a>
+        </div>
+      </div>
+
+      <div class="callout reveal">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 64 64"><g stroke="currentColor" stroke-width="2.4" fill="none"><circle cx="32" cy="32" r="20"/><ellipse cx="32" cy="32" rx="8" ry="20"/><line x1="12" y1="32" x2="52" y2="32"/></g></svg>
+        </div>
+        <div>
+          <h4>หลักการสากล: ครูที่เชี่ยวชาญในมุมมองโลก</h4>
+          <p>หลักการของ National Board for Professional Teaching Standards (NBPTS) สหรัฐอเมริกา ระบุข้อกำหนดหลัก 5 ประการของครูที่เชี่ยวชาญไว้อย่างกระชับ: ผูกพันกับผู้เรียนและการเรียนรู้ของพวกเขา รู้เนื้อหาวิชาและวิธีสอนอย่างลึกซึ้ง รับผิดชอบต่อการจัดการและติดตามผลการเรียนรู้ คิดอย่างเป็นระบบและเรียนรู้จากประสบการณ์ของตนเองอยู่เสมอ และเป็นสมาชิกที่ดีของชุมชนแห่งการเรียนรู้ — แนวคิดเหล่านี้สอดคล้องกับมาตรฐานทั้ง 3 ด้านของไทยอย่างชัดเจน</p>
+          <span class="src">อ้างอิงแนวคิดจาก NBPTS, สหรัฐอเมริกา · <a href="professionalism.html" style="color:var(--gold);text-decoration:underline;">อ่านหลักวิชาการสากลฉบับเต็ม →</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY HIGH PROFESSION -->
+  <section class="section-deep" id="conditions">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">เงื่อนไขของความเป็นครู</div>
+        <h2>อะไรทำให้ "ครู" เป็นวิชาชีพ ไม่ใช่เพียงอาชีพ</h2>
+        <p>นอกจากมาตรฐานทั้ง 3 ด้านข้างต้น วิชาชีพครูยังถูกกำกับด้วยเงื่อนไขเชิงโครงสร้างที่ทำให้ได้รับการยอมรับเป็นวิชาชีพชั้นสูง</p>
+      </div>
+      <div class="conditions">
+        <div class="cond reveal"><span class="num">01</span><p>ได้รับการศึกษาอบรมเป็นพิเศษเฉพาะทาง</p></div>
+        <div class="cond reveal"><span class="num">02</span><p>มีจรรยาบรรณวิชาชีพกำกับความประพฤติ</p></div>
+        <div class="cond reveal"><span class="num">03</span><p>มีมาตรฐานวิชาชีพและมาตรฐานวิทยฐานะที่ชัดเจน</p></div>
+        <div class="cond reveal"><span class="num">04</span><p>มีใบอนุญาตประกอบวิชาชีพครู</p></div>
+        <div class="cond reveal"><span class="num">05</span><p>มีองค์กรวิชาชีพ (คุรุสภา) กำกับดูแล</p></div>
+        <div class="cond reveal"><span class="num">06</span><p>มีพัฒนาการของตนเองอย่างต่อเนื่องตลอดเส้นทางอาชีพ</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="next">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">ก้าวต่อไป</div>
+        <h2>อ่านต่อ</h2>
+      </div>
+      <div class="next-grid">
+        <a class="next-card reveal" href="ethics.html">
+          <h4>จรรยาบรรณวิชาชีพครู →</h4>
+          <p>อ่านจรรยาบรรณวิชาชีพครูฉบับเต็ม 5 ด้าน 9 ข้อ พร้อมความหมายของแต่ละด้าน</p>
+        </a>
+        <a class="next-card reveal" href="pathway.html">
+          <h4>เส้นทางสู่วิชาชีพครู →</h4>
+          <p>สำหรับผู้สนใจเป็นครู: เรียนที่ไหน สอบอะไร ใช้ทุนอะไร และต้องทำอะไรหลังเรียนจบ</p>
+        </a>
+        <a class="next-card reveal" href="professionalism.html">
+          <h4>หลักวิชาการสากลว่าด้วยวิชาชีพ →</h4>
+          <p>ดูที่มาทางทฤษฎีของมาตรฐานเหล่านี้ และข้อถกเถียงว่าครูเป็นวิชาชีพเต็มรูปแบบหรือไม่</p>
+        </a>
+        <a class="next-card reveal" href="index.html#pillars">
+          <h4>รากฐานสี่ประการของวิชาชีพครู →</h4>
+          <p>ย้อนดูความหมายของเข็ม ข้าวตอก หญ้าแพรก และดอกมะเขือ ที่เชื่อมโยงกับมาตรฐานเหล่านี้</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-row">
+      <div class="foot-brand">
+        <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="92" stroke="#FBF7EF" stroke-width="3" fill="none"/><circle cx="100" cy="100" r="78" stroke="#B6883A" stroke-width="1.6" fill="none"/><path d="M70 142 L130 142 L121 154 L79 154 Z" stroke="#FBF7EF" stroke-width="4" fill="none" stroke-linejoin="round"/><line x1="100" y1="142" x2="100" y2="122" stroke="#FBF7EF" stroke-width="4"/></svg>
+        <span class="name">ครุจิต</span>
+      </div>
+      <div class="foot-links">
+        <a href="index.html">หน้าหลัก</a>
+        <a href="standards.html">มาตรฐานวิชาชีพ</a>
+        <a href="ethics.html">จรรยาบรรณ</a>
+        <a href="pathway.html">เส้นทางสู่วิชาชีพ</a>
+        <a href="professionalism.html">หลักวิชาการสากล</a>
+        <a href="international.html">มาตรฐานนานาชาติ</a>
+        <a href="knowledge.html">คลังความรู้</a>
+        <a href="about.html">เกี่ยวกับผู้จัดทำ</a>
+      </div>
+    </div>
+    <p class="foot-legal">© 2026 ครุจิต — เว็บไซต์อิสระจัดทำขึ้นเพื่อส่งเสริมจิตวิญญาณและมาตรฐานวิชาชีพครู มิใช่หน่วยงานราชการและไม่ได้เป็นส่วนหนึ่งของคุรุสภา ข้อมูลด้านกฎหมายอ้างอิงข้อบังคับคุรุสภาที่ประกาศใช้ โปรดตรวจสอบข้อมูลล่าสุดที่ ksp.or.th</p>
+  </div>
+</footer>
+
+<script>
+  const header = document.querySelector('header.site');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 8));
+  const menubtn = document.getElementById('menubtn');
+  const mobilenav = document.getElementById('mobilenav');
+  menubtn.addEventListener('click', () => {
+    const open = mobilenav.style.display === 'flex';
+    mobilenav.style.display = open ? 'none' : 'flex';
+    menubtn.setAttribute('aria-expanded', String(!open));
+  });
+  mobilenav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobilenav.style.display = 'none'));
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  }
+</script>
+</body>
+</html>
