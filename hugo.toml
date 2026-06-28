@@ -1,0 +1,11 @@
+baseURL = "https://example.org/"
+languageCode = "th-th"
+title = "ครุจิต — ศูนย์รวมหลักการและจิตวิญญาณวิชาชีพครูไทย"
+
+[params]
+  description = "ครุจิต รวบรวมหลักการ มาตรฐานวิชาชีพ และจรรยาบรรณของวิชาชีพครูไทย บนรากฐานกฎหมายไทยและหลักการสากล เพื่อฟื้นฟูและยกระดับศักดิ์ศรีวิชาชีพครู"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

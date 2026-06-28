@@ -1,0 +1,110 @@
+{{ define "pagecss" }}
+<link rel="stylesheet" href="{{ "css/about.css" | absURL }}">
+{{ end }}
+
+{{ define "main" }}
+
+<section class="pagehero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="{{ "/" | relURL }}">ครุจิต</a> / เกี่ยวกับผู้จัดทำ</div>
+    <div class="eyebrow">ผู้ก่อตั้งครุจิต</div>
+    <h1>เกี่ยวกับผู้จัดทำ</h1>
+    <p class="lead">ครุจิตเริ่มต้นจากความตั้งใจของบุคคลคนหนึ่งที่ใช้ชีวิตอยู่กับวิชาชีพครูในหลายบทบาท และเชื่อว่าวิชาชีพนี้สมควรได้รับการฟื้นฟูและยกระดับให้เป็นวิชาชีพชั้นสูงอย่างแท้จริง</p>
+  </div>
+</section>
+
+<!-- PROFILE -->
+<section id="profile">
+  <div class="wrap">
+    <div class="profile reveal">
+      <svg class="avatar" viewBox="0 0 200 200">
+        <circle cx="100" cy="100" r="92" stroke="#1A2B45" stroke-width="2" fill="none"/>
+        <circle cx="100" cy="100" r="78" stroke="#B6883A" stroke-width="1.2" fill="none"/>
+        <text x="100" y="116" text-anchor="middle" font-family="Noto Serif Thai, serif" font-weight="700" font-size="56" fill="#1A2B45">BP</text>
+      </svg>
+      <div>
+        <h3>Boorapatis Ploysuwan</h3>
+        <span class="role">ผู้ก่อตั้งและผู้จัดทำครุจิต</span>
+        <div class="chips">
+          <span class="chip">สมาชิกคุรุสภา</span>
+          <span class="chip">ผู้มีใบอนุญาตประกอบวิชาชีพครู</span>
+          <span class="chip">ผู้มีใบอนุญาตประกอบวิชาชีพผู้บริหารสถานศึกษา</span>
+        </div>
+        <p class="bio">Boorapatis Ploysuwan เป็นสมาชิกคุรุสภาผู้ถือใบอนุญาตประกอบวิชาชีพทั้งด้านการสอนและการบริหารสถานศึกษา ผ่านประสบการณ์ในวิชาชีพครูมาในหลายบทบาท ตั้งแต่เป็นครูผู้สอนในห้องเรียนจริง เป็นอาจารย์ผู้ถ่ายทอดความรู้ให้แก่ผู้ที่กำลังจะก้าวเข้าสู่วิชาชีพครู ไปจนถึงเป็นผู้บริหารสถาบันผลิตครู ประสบการณ์ที่สั่งสมจากทุกมุมของระบบการผลิตและพัฒนาครูนี้เอง เป็นที่มาของความตั้งใจที่จะสร้างพื้นที่อย่างครุจิต เพื่อฟื้นฟูและยกระดับวิชาชีพครูให้เกิดประโยชน์สูงสุดต่อทุกคนในสังคม ประเทศชาติ และโลกของเรา</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER PATH -->
+<section class="section-deep" id="career">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">เส้นทางในวิชาชีพ</div>
+      <h2>มองวิชาชีพครูจากทุกมุม</h2>
+      <p>การผ่านบทบาทที่หลากหลายในระบบการศึกษา ทำให้เข้าใจวิชาชีพครูทั้งในมุมผู้ปฏิบัติและมุมผู้ออกแบบระบบ</p>
+    </div>
+    <div class="ladder reveal">
+      <div class="step"><span class="lic">ครูผู้สอน</span><p>ปฏิบัติหน้าที่สอนในห้องเรียนจริง</p></div>
+      <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg></div>
+      <div class="step"><span class="lic">อาจารย์</span><p>ถ่ายทอดความรู้ในสถาบันผลิตครู</p></div>
+      <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg></div>
+      <div class="step"><span class="lic">ผู้บริหารสถาบันผลิตครู</span><p>กำกับดูแลคุณภาพการผลิตครู</p></div>
+      <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg></div>
+      <div class="step"><span class="lic">ผู้ก่อตั้งครุจิต</span><p>สร้างพื้นที่ฟื้นฟูจิตวิญญาณวิชาชีพครู</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission">
+  <div class="wrap">
+    <div class="eyebrow reveal">เจตนารมณ์</div>
+    <blockquote class="reveal">"ครุจิตเกิดขึ้นจากความเชื่อว่า วิชาชีพครูคือวิชาชีพชั้นสูงที่ส่งผลกระทบต่อสังคมอย่างลึกซึ้งที่สุด การฟื้นฟูและยกระดับวิชาชีพนี้ จึงไม่ใช่เพื่อครูคนใดคนหนึ่ง แต่เพื่อประโยชน์สูงสุดของทุกคนในสังคม ประเทศชาติ และโลกของเรา"</blockquote>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">ความโปร่งใส</div>
+      <h2>ครุจิตคืออะไร และไม่ใช่อะไร</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <h4>ครุจิตคือ</h4>
+        <p>เว็บไซต์อิสระที่จัดทำโดยบุคคล เพื่อรวบรวมหลักการ มาตรฐาน และแรงบันดาลใจที่เกี่ยวกับวิชาชีพครู โดยอ้างอิงข้อมูลทางกฎหมายจากคุรุสภาและหลักวิชาการสากลอย่างตรงไปตรงมาที่สุดเท่าที่จะทำได้</p>
+      </div>
+      <div class="why-card reveal">
+        <h4>ครุจิตไม่ใช่</h4>
+        <p>หน่วยงานราชการ ไม่ใช่ส่วนหนึ่งของคุรุสภา และไม่ได้ทำหน้าที่ออกใบอนุญาตหรือรับรองวิทยฐานะใด ๆ ข้อมูลที่เกี่ยวข้องกับกฎหมายหรือสิทธิประโยชน์ควรตรวจสอบกับคุรุสภาหรือหน่วยงานที่เกี่ยวข้องโดยตรงเสมอ</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-deep" id="next">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">เริ่มสำรวจครุจิต</div>
+      <h2>เริ่มต้นจากที่ใดก็ได้</h2>
+    </div>
+    <div class="next-grid">
+      <a class="next-card reveal" href="{{ "/" | relURL }}#pillars">
+        <h4>รากฐานสี่ประการของวิชาชีพครู →</h4>
+        <p>จุดเริ่มต้นของแนวคิดทั้งหมดในครุจิต</p>
+      </a>
+      <a class="next-card reveal" href="{{ "standards/" | relURL }}">
+        <h4>มาตรฐานวิชาชีพครู →</h4>
+        <p>มาตรฐานที่ผู้จัดทำยึดถือผ่านบทบาทครู อาจารย์ และผู้บริหาร</p>
+      </a>
+      <a class="next-card reveal" href="{{ "knowledge/" | relURL }}">
+        <h4>คลังความรู้พัฒนาวิชาชีพ →</h4>
+        <p>แผนที่การพัฒนาตนเองที่กลั่นจากประสบการณ์ในระบบผลิตครู</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+{{ end }}
