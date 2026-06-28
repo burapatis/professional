@@ -9,3 +9,10 @@ title = "ครุจิต — ศูนย์รวมหลักการแ
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[outputFormats]
+  [outputFormats.JSON]
+    mediaType = "application/json"
+    baseName = "questions"
+    isPlainText = true
+    notAlternative = true

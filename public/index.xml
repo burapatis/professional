@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>ครุจิต — ศูนย์รวมหลักการและจิตวิญญาณวิชาชีพครูไทย</title>
+		<link>http://localhost:1313/</link>
+		<description>Recent content on ครุจิต — ศูนย์รวมหลักการและจิตวิญญาณวิชาชีพครูไทย</description>
+		<generator>Hugo</generator>
+		<language>th-th</language>
+		
+		
+		
+		
+			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>เกี่ยวกับผู้จัดทำ</title>
+				<link>http://localhost:1313/about/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/about/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>คลังข้อสอบฝึกฝน</title>
+				<link>http://localhost:1313/testbank/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/testbank/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>คลังความรู้พัฒนาวิชาชีพครู</title>
+				<link>http://localhost:1313/knowledge/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/knowledge/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>จรรยาบรรณวิชาชีพครู</title>
+				<link>http://localhost:1313/ethics/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/ethics/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>มาตรฐานวิชาชีพครู</title>
+				<link>http://localhost:1313/standards/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/standards/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>มาตรฐานวิชาชีพครูนานาชาติ</title>
+				<link>http://localhost:1313/international/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/international/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>เส้นทางสู่วิชาชีพครู</title>
+				<link>http://localhost:1313/pathway/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/pathway/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>หลักวิชาการสากลว่าด้วยความเป็นวิชาชีพ</title>
+				<link>http://localhost:1313/professionalism/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/professionalism/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

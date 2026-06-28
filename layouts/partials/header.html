@@ -15,6 +15,7 @@
       <a href="{{ "pathway/" | relURL }}"{{ if eq $nav "pathway" }} class="active"{{ end }}>เส้นทางสู่วิชาชีพ</a>
       <a href="{{ "professionalism/" | relURL }}"{{ if eq $nav "professionalism" }} class="active"{{ end }}>หลักวิชาการสากล</a>
       <a href="{{ "knowledge/" | relURL }}"{{ if eq $nav "knowledge" }} class="active"{{ end }}>คลังความรู้</a>
+      <a href="{{ "testbank/" | relURL }}"{{ if eq $nav "testbank" }} class="active"{{ end }}>คลังข้อสอบ</a>
     </div>
     {{ if eq .Page.Params.nav "home" }}
     <div class="navcta">
@@ -34,5 +35,6 @@
     <a href="{{ "pathway/" | relURL }}" style="padding:10px 0;border-bottom:1px solid var(--line)">เส้นทางสู่วิชาชีพ</a>
     <a href="{{ "professionalism/" | relURL }}" style="padding:10px 0;border-bottom:1px solid var(--line)">หลักวิชาการสากล</a>
     <a href="{{ "knowledge/" | relURL }}" style="padding:10px 0;">คลังความรู้</a>
+    <a href="{{ "testbank/" | relURL }}" style="padding:10px 0;border-top:1px solid var(--line);">คลังข้อสอบ</a>
   </div>
 </header>
