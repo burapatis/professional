@@ -93,6 +93,7 @@ nav.bar{
 }
 .brand{display:flex;align-items:center;gap:12px;}
 .brand svg{width:40px;height:40px;flex-shrink:0;}
+.brand .brand-logo{width:44px;height:44px;flex-shrink:0;border-radius:50%;object-fit:cover;}
 .brand .name{font-family:var(--serif);font-weight:700;font-size:21px;color:var(--ink);}
 .brand .tag{display:block;font-family:var(--utility);font-size:10.5px;letter-spacing:.12em;color:var(--ink-soft);font-weight:500;}
 .navlinks{display:flex;align-items:center;gap:18px;font-family:var(--utility);font-size:13.5px;font-weight:500;flex-wrap:wrap;}

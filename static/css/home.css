@@ -28,10 +28,7 @@ section{padding:96px 0;}
   box-shadow:var(--shadow);transition:transform .3s ease;
 }
 .pillar-card:hover{transform:translateY(-6px);}
-.pillar-card .icon{width:54px;height:54px;color:var(--lacquer);}
-.pillar-card:nth-child(2) .icon{color:var(--gold);}
-.pillar-card:nth-child(3) .icon{color:var(--moss);}
-.pillar-card:nth-child(4) .icon{color:var(--ink);}
+.pillar-card .icon{width:66px;height:66px;border-radius:50%;object-fit:cover;display:block;box-shadow:0 4px 14px -8px rgba(26,43,69,.5);}
 .pillar-card .flower-name{font-family:var(--utility);font-size:13px;letter-spacing:.08em;color:var(--ink-soft);}
 .pillar-card h3{font-size:21px;line-height:1.3;}
 .pillar-card p{color:var(--ink-soft);font-size:15px;flex-grow:1;}

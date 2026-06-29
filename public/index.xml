@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>ครุจิต — ศูนย์รวมหลักการและจิตวิญญาณวิชาชีพครูไทย</title>
-		<link>https://example.org/</link>
+		<link>http://localhost:1414/</link>
 		<description>Recent content on ครุจิต — ศูนย์รวมหลักการและจิตวิญญาณวิชาชีพครูไทย</description>
 		<generator>Hugo</generator>
 		<language>th-th</language>
@@ -10,82 +10,82 @@
 		
 		
 		
-			<atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1414/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>เกี่ยวกับผู้จัดทำ</title>
-				<link>https://example.org/about/</link>
+				<link>http://localhost:1414/about/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://example.org/about/</guid>
+				<guid>http://localhost:1414/about/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>ข้อกำหนดการใช้งาน</title>
-				<link>https://example.org/terms/</link>
+				<link>http://localhost:1414/terms/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://example.org/terms/</guid>
+				<guid>http://localhost:1414/terms/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>คลังข้อสอบฝึกฝน</title>
-				<link>https://example.org/testbank/</link>
+				<link>http://localhost:1414/testbank/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://example.org/testbank/</guid>
+				<guid>http://localhost:1414/testbank/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>คลังความรู้พัฒนาวิชาชีพครู</title>
-				<link>https://example.org/knowledge/</link>
+				<link>http://localhost:1414/knowledge/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://example.org/knowledge/</guid>
+				<guid>http://localhost:1414/knowledge/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>จรรยาบรรณวิชาชีพครู</title>
-				<link>https://example.org/ethics/</link>
+				<link>http://localhost:1414/ethics/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://example.org/ethics/</guid>
+				<guid>http://localhost:1414/ethics/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>นโยบายความเป็นส่วนตัว</title>
-				<link>https://example.org/privacy/</link>
+				<link>http://localhost:1414/privacy/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://example.org/privacy/</guid>
+				<guid>http://localhost:1414/privacy/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>มาตรฐานวิชาชีพครู</title>
-				<link>https://example.org/standards/</link>
+				<link>http://localhost:1414/standards/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://example.org/standards/</guid>
+				<guid>http://localhost:1414/standards/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>มาตรฐานวิชาชีพครูนานาชาติ</title>
-				<link>https://example.org/international/</link>
+				<link>http://localhost:1414/international/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://example.org/international/</guid>
+				<guid>http://localhost:1414/international/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>วิธีใช้งานและคำถามที่พบบ่อย</title>
-				<link>https://example.org/help/</link>
+				<link>http://localhost:1414/help/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://example.org/help/</guid>
+				<guid>http://localhost:1414/help/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>เส้นทางสู่วิชาชีพครู</title>
-				<link>https://example.org/pathway/</link>
+				<link>http://localhost:1414/pathway/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://example.org/pathway/</guid>
+				<guid>http://localhost:1414/pathway/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>หลักวิชาการสากลว่าด้วยความเป็นวิชาชีพ</title>
-				<link>https://example.org/professionalism/</link>
+				<link>http://localhost:1414/professionalism/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://example.org/professionalism/</guid>
+				<guid>http://localhost:1414/professionalism/</guid>
 				<description></description>
 			</item>
 	</channel>
