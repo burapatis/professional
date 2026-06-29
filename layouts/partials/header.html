@@ -1,7 +1,7 @@
 {{- $nav := .Params.nav -}}
 <header class="site" id="top">
   <nav class="bar">
-    <a href="{{ "/" | relURL }}" class="brand">
+    <a href="{{ site.Home.RelPermalink }}" class="brand">
       <svg aria-hidden="true" focusable="false" viewBox="0 0 200 200"><circle cx="100" cy="100" r="92" stroke="#1A2B45" stroke-width="3" fill="none"/><circle cx="100" cy="100" r="78" stroke="#B6883A" stroke-width="1.6" fill="none"/><path d="M70 142 L130 142 L121 154 L79 154 Z" stroke="#1A2B45" stroke-width="4" fill="none" stroke-linejoin="round"/><line x1="100" y1="142" x2="100" y2="122" stroke="#1A2B45" stroke-width="4"/><path d="M88 122 C86 107,90 94,94 82" stroke="#3E5B45" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M100 122 C100 104,100 90,100 76" stroke="#3E5B45" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M112 122 C114 107,110 94,106 82" stroke="#3E5B45" stroke-width="4" fill="none" stroke-linecap="round"/><g stroke="#7C2E28" stroke-width="4" stroke-linecap="round" transform="translate(100,70)"><line x1="0" y1="0" x2="0" y2="-14"/><line x1="0" y1="0" x2="12" y2="-6"/><line x1="0" y1="0" x2="12" y2="7"/><line x1="0" y1="0" x2="0" y2="14"/><line x1="0" y1="0" x2="-12" y2="7"/><line x1="0" y1="0" x2="-12" y2="-6"/><circle cx="0" cy="0" r="4" fill="#7C2E28" stroke="none"/></g><g stroke="#B6883A" stroke-width="3.4" fill="none" transform="translate(70,110)"><circle cx="0" cy="0" r="5"/><circle cx="9" cy="-4" r="4"/><circle cx="6" cy="7" r="4"/></g><g stroke="#1A2B45" stroke-width="3.4" fill="none" stroke-linecap="round" transform="translate(130,98)"><path d="M0 -20 C -2 -8, -4 -2, -6 4"/><g transform="translate(-6,8)"><line x1="0" y1="0" x2="0" y2="-7"/><line x1="0" y1="0" x2="6" y2="-2"/><line x1="0" y1="0" x2="4" y2="6"/><line x1="0" y1="0" x2="-4" y2="6"/><line x1="0" y1="0" x2="-6" y2="-2"/></g></g></svg>
       <span>
         <span class="name">ครุจิต</span>
@@ -9,7 +9,7 @@
       </span>
     </a>
     <div class="navlinks">
-      <a href="{{ "/" | relURL }}#pillars"{{ if eq $nav "pillars" }} class="active"{{ end }}>รากฐานสี่ประการ</a>
+      <a href="{{ site.Home.RelPermalink }}#pillars"{{ if eq $nav "pillars" }} class="active"{{ end }}>รากฐานสี่ประการ</a>
       <a href="{{ "standards/" | relURL }}"{{ if eq $nav "standards" }} class="active" aria-current="page"{{ end }}>มาตรฐานวิชาชีพ</a>
       <a href="{{ "ethics/" | relURL }}"{{ if eq $nav "ethics" }} class="active" aria-current="page"{{ end }}>จรรยาบรรณ</a>
       <a href="{{ "pathway/" | relURL }}"{{ if eq $nav "pathway" }} class="active" aria-current="page"{{ end }}>เส้นทางสู่วิชาชีพ</a>
@@ -20,7 +20,7 @@
     <button class="menubtn" id="menubtn" aria-label="เปิดเมนู" aria-expanded="false" aria-controls="mobilenav"><span></span><span></span><span></span></button>
   </nav>
   <div id="mobilenav" style="display:none;flex-direction:column;gap:4px;padding:0 28px 22px;font-family:var(--utility);font-size:15px;">
-    <a href="{{ "/" | relURL }}#pillars" style="padding:10px 0;border-bottom:1px solid var(--line)">รากฐานสี่ประการ</a>
+    <a href="{{ site.Home.RelPermalink }}#pillars" style="padding:10px 0;border-bottom:1px solid var(--line)">รากฐานสี่ประการ</a>
     <a href="{{ "standards/" | relURL }}" style="padding:10px 0;border-bottom:1px solid var(--line)">มาตรฐานวิชาชีพ</a>
     <a href="{{ "ethics/" | relURL }}" style="padding:10px 0;border-bottom:1px solid var(--line)">จรรยาบรรณ</a>
     <a href="{{ "pathway/" | relURL }}" style="padding:10px 0;border-bottom:1px solid var(--line)">เส้นทางสู่วิชาชีพ</a>
