@@ -22,8 +22,17 @@
   </div>
 </section>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 (function(){
+  // ===== Supabase auth (เฉพาะหน้าคลังข้อสอบ) =====
+  var SUPABASE_URL = "https://rlhbwfmhxxcwrgndvbmh.supabase.co";
+  var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsaGJ3Zm1oeHhjd3JnbmR2Ym1oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3MDc2MDQsImV4cCI6MjA5ODI4MzYwNH0.gsT8-a8gXkhFbLJm1DXkCuODTAvO3I-wxSenX2xbcvY";
+  var sb = null;
+  try { if (window.supabase && window.supabase.createClient) sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); } catch(e){ sb = null; }
+  var currentSession = null;
+  var PENDING_KEY = "krujit_pending_quiz";
+
   var CATEGORIES = [
     { key: 1, label: "การเปลี่ยนแปลงบริบทของโลก สังคม และปรัชญาเศรษฐกิจพอเพียง", short: "บริบทโลก/เศรษฐกิจพอเพียง" },
     { key: 2, label: "จิตวิทยาพัฒนาการ จิตวิทยาการศึกษา และจิตวิทยาให้คำปรึกษา", short: "จิตวิทยาสำหรับครู" },
@@ -130,7 +139,7 @@
   function renderSelect(){
     state.screen = "select";
     var mockBest = getBest(MOCK_KEY);
-    var html = '';
+    var html = authBarHtml();
 
     html += '<button class="mock-card" id="tb-mock">' +
       '<div class="mock-card-main">' +
@@ -168,11 +177,129 @@
     root.innerHTML = html;
 
     var mockBtn = document.getElementById("tb-mock");
-    if (mockBtn) mockBtn.addEventListener("click", startMock);
+    if (mockBtn) mockBtn.addEventListener("click", function(){ gate({ type: "mock" }); });
     Array.prototype.forEach.call(root.querySelectorAll(".category-card"), function(btn){
       btn.addEventListener("click", function(){
-        startQuiz(btn.getAttribute("data-cat"));
+        gate({ type: "cat", key: btn.getAttribute("data-cat") });
       });
+    });
+
+    var logoutBtn = document.getElementById("tb-logout");
+    if (logoutBtn) logoutBtn.addEventListener("click", function(){
+      if (!sb) return;
+      logoutBtn.disabled = true;
+      sb.auth.signOut().then(function(){ renderSelect(); });
+    });
+    var loginBtn = document.getElementById("tb-login");
+    if (loginBtn) loginBtn.addEventListener("click", function(){ openAuthModal(); });
+  }
+
+  // ===== Auth gate + UI =====
+  function authBarHtml(){
+    if (!sb) return '';
+    if (currentSession && currentSession.user){
+      var email = currentSession.user.email || "ผู้ใช้";
+      return '<div class="tb-authbar in">' +
+        '<span class="tb-auth-status">✓ เข้าสู่ระบบแล้ว: <strong>' + esc(email) + '</strong></span>' +
+        '<button class="tb-auth-logout" id="tb-logout">ออกจากระบบ</button></div>';
+    }
+    return '<div class="tb-authbar out">' +
+      '<span class="tb-auth-status">🔒 ต้องเข้าสู่ระบบก่อนจึงจะเริ่มทำข้อสอบได้</span>' +
+      '<button class="tb-auth-login" id="tb-login">เข้าสู่ระบบ</button></div>';
+  }
+
+  function gate(intent){
+    if (!sb || currentSession){ runIntent(intent); return; }
+    try { sessionStorage.setItem(PENDING_KEY, JSON.stringify(intent)); } catch(e){}
+    openAuthModal();
+  }
+  function runIntent(intent){
+    if (!intent) return;
+    if (intent.type === "mock") startMock();
+    else if (intent.type === "cat") startQuiz(intent.key);
+  }
+  function maybeResume(){
+    if (!currentSession) return;
+    var raw = null;
+    try { raw = sessionStorage.getItem(PENDING_KEY); sessionStorage.removeItem(PENDING_KEY); } catch(e){}
+    if (raw){ try { runIntent(JSON.parse(raw)); } catch(e){} }
+  }
+
+  function redirectURL(){ return window.location.origin + window.location.pathname; }
+
+  function closeAuthModal(){
+    var ov = document.getElementById("tb-auth-modal");
+    if (ov) ov.classList.remove("show");
+  }
+  function authMsg(text, kind){
+    var el = document.getElementById("tb-auth-msg");
+    if (!el) return;
+    el.className = "tb-auth-msg show" + (kind ? " " + kind : "");
+    el.textContent = text;
+  }
+  function openAuthModal(){
+    if (!sb) return;
+    var ov = document.getElementById("tb-auth-modal");
+    if (ov){ ov.classList.add("show"); return; }
+    ov = document.createElement("div");
+    ov.id = "tb-auth-modal";
+    ov.className = "tb-modal-overlay show";
+    ov.innerHTML =
+      '<div class="tb-modal" role="dialog" aria-modal="true" aria-labelledby="tb-modal-title">' +
+        '<button class="tb-modal-close" id="tb-modal-close" aria-label="ปิด">×</button>' +
+        '<h2 id="tb-modal-title">เข้าสู่ระบบเพื่อทำข้อสอบ</h2>' +
+        '<p class="tb-modal-sub">เข้าสู่ระบบก่อนเริ่มทำข้อสอบ เลือกใช้บัญชี Google หรือรับลิงก์เข้าสู่ระบบทางอีเมลก็ได้</p>' +
+        '<button class="tb-btn-google" id="tb-google">' +
+          '<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>' +
+          'เข้าสู่ระบบด้วย Google</button>' +
+        '<div class="tb-divider"><span>หรือ</span></div>' +
+        '<form class="tb-magic" id="tb-magic">' +
+          '<input type="email" id="tb-email" placeholder="กรอกอีเมลของคุณ" required autocomplete="email">' +
+          '<button type="submit" class="tb-btn-magic" id="tb-magic-btn">ส่งลิงก์เข้าสู่ระบบ</button>' +
+        '</form>' +
+        '<div class="tb-auth-msg" id="tb-auth-msg"></div>' +
+      '</div>';
+    document.body.appendChild(ov);
+
+    ov.addEventListener("click", function(e){ if (e.target === ov) closeAuthModal(); });
+    document.getElementById("tb-modal-close").addEventListener("click", closeAuthModal);
+
+    document.getElementById("tb-google").addEventListener("click", function(){
+      authMsg("กำลังพาไปยัง Google…");
+      sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: redirectURL() } })
+        .then(function(res){
+          if (res && res.error) authMsg("ยังเข้าสู่ระบบด้วย Google ไม่ได้ (" + res.error.message + ") — ลองใช้อีเมลแทนได้ครับ", "err");
+        });
+    });
+
+    document.getElementById("tb-magic").addEventListener("submit", function(e){
+      e.preventDefault();
+      var email = (document.getElementById("tb-email").value || "").trim();
+      if (!email) return;
+      var btn = document.getElementById("tb-magic-btn");
+      btn.disabled = true;
+      authMsg("กำลังส่งลิงก์…");
+      sb.auth.signInWithOtp({ email: email, options: { emailRedirectTo: redirectURL() } })
+        .then(function(res){
+          btn.disabled = false;
+          if (res && res.error) authMsg("ส่งลิงก์ไม่สำเร็จ: " + res.error.message, "err");
+          else authMsg("ส่งลิงก์ไปที่ " + email + " แล้ว เปิดอีเมลแล้วคลิกลิงก์เพื่อเข้าสู่ระบบได้เลย", "ok");
+        });
+    });
+  }
+
+  function initAuth(){
+    if (!sb){ renderSelect(); return; }
+    sb.auth.getSession().then(function(r){
+      currentSession = (r && r.data) ? r.data.session : null;
+      renderSelect();
+      maybeResume();
+    });
+    sb.auth.onAuthStateChange(function(_event, session){
+      currentSession = session || null;
+      closeAuthModal();
+      if (state.screen === "select") renderSelect();
+      maybeResume();
     });
   }
 
@@ -399,7 +526,7 @@
     .then(function(r){ return r.json(); })
     .then(function(data){
       allQuestions = data;
-      renderSelect();
+      initAuth();
     })
     .catch(function(){
       root.innerHTML = '<div class="tb-loading">ไม่สามารถโหลดคลังข้อสอบได้ ลองรีเฟรชหน้านี้อีกครั้ง</div>';
