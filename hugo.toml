@@ -1,9 +1,11 @@
-baseURL = "https://example.org/"
+baseURL = "https://burapatis.github.io/professional/"
 languageCode = "th-th"
 title = "ครุจิต — ศูนย์รวมหลักการและจิตวิญญาณวิชาชีพครูไทย"
+enableRobotsTXT = true
 
 [params]
   description = "ครุจิต รวบรวมหลักการ มาตรฐานวิชาชีพ และจรรยาบรรณของวิชาชีพครูไทย บนรากฐานกฎหมายไทยและหลักการสากล เพื่อฟื้นฟูและยกระดับศักดิ์ศรีวิชาชีพครู"
+  ogImage = "images/hero-waikhru.jpg"
 
 [taxonomies]
   tag = "tags"

@@ -47,6 +47,9 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
 
+      - name: สร้างดัชนีค้นหา (Pagefind)
+        run: npx -y pagefind@latest --site public
+
       - name: อัปโหลดผลลัพธ์ build
         uses: actions/upload-pages-artifact@v5
         with:

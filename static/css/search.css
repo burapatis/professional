@@ -1,0 +1,27 @@
+/* ===== search.css — หน้า /search/ (ปรับธีม Pagefind UI ให้เข้ากับครุจิต) ===== */
+
+.search-section{padding:48px 0 110px;}
+
+#search{
+  --pagefind-ui-scale:1;
+  --pagefind-ui-primary:var(--lacquer);
+  --pagefind-ui-text:var(--ink);
+  --pagefind-ui-background:#fff;
+  --pagefind-ui-border:var(--line);
+  --pagefind-ui-tag:var(--paper-deep);
+  --pagefind-ui-border-width:1.5px;
+  --pagefind-ui-border-radius:14px;
+  --pagefind-ui-font:var(--body);
+}
+
+.pagefind-ui__search-input{font-family:var(--body);font-size:16px;}
+.pagefind-ui__result-title a{font-family:var(--serif);color:var(--ink);}
+.pagefind-ui__result-title a:hover{color:var(--lacquer);}
+.pagefind-ui__result-excerpt{font-family:var(--body);color:var(--ink-soft);}
+.pagefind-ui__message{font-family:var(--utility);color:var(--ink-soft);}
+
+.search-fallback{
+  font-family:var(--utility);font-size:14px;color:var(--ink-soft);line-height:1.7;
+  background:rgba(182,136,58,.12);border:1px solid rgba(182,136,58,.3);
+  border-radius:12px;padding:18px 22px;margin-top:8px;
+}

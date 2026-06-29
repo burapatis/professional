@@ -67,15 +67,50 @@
     return allQuestions.filter(function(q){ return String(q.domain) === String(key); });
   }
 
+  var remoteBest = {};
   function storageKey(catKey){ return "krujit_tb_best_" + catKey; }
-  function getBest(catKey){
+  function localBest(catKey){
     try { return parseInt(localStorage.getItem(storageKey(catKey)) || "0", 10); } catch(e){ return 0; }
+  }
+  function getBest(catKey){
+    var r = remoteBest[String(catKey)] || 0;
+    return Math.max(localBest(catKey), r);
   }
   function setBest(catKey, percent){
     try {
-      var cur = getBest(catKey);
-      if (percent > cur) localStorage.setItem(storageKey(catKey), String(percent));
+      if (percent > localBest(catKey)) localStorage.setItem(storageKey(catKey), String(percent));
     } catch(e){}
+  }
+
+  // ===== บันทึก/ดึงคะแนนจาก Supabase (เมื่อเข้าสู่ระบบ) =====
+  function loadRemoteScores(){
+    if (!sb || !currentSession) return Promise.resolve();
+    return sb.from("quiz_results")
+      .select("category,percent")
+      .then(function(res){
+        if (res && res.data){
+          var by = {};
+          res.data.forEach(function(row){
+            var k = String(row.category);
+            if (!by[k] || row.percent > by[k]) by[k] = row.percent;
+          });
+          remoteBest = by;
+        }
+      })
+      .catch(function(){});
+  }
+  function saveResult(catKey, score, total, percent){
+    if (!sb || !currentSession) return;
+    sb.from("quiz_results").insert({
+      user_id: currentSession.user.id,
+      category: String(catKey),
+      score: score,
+      total: total,
+      percent: percent
+    }).then(function(){
+      var k = String(catKey);
+      if (!remoteBest[k] || percent > remoteBest[k]) remoteBest[k] = percent;
+    }).catch(function(){});
   }
 
   function shuffle(arr){
@@ -292,14 +327,24 @@
     if (!sb){ renderSelect(); return; }
     sb.auth.getSession().then(function(r){
       currentSession = (r && r.data) ? r.data.session : null;
-      renderSelect();
-      maybeResume();
+      loadRemoteScores().then(function(){
+        renderSelect();
+        maybeResume();
+      });
     });
     sb.auth.onAuthStateChange(function(_event, session){
+      var wasLoggedIn = !!currentSession;
       currentSession = session || null;
       closeAuthModal();
-      if (state.screen === "select") renderSelect();
-      maybeResume();
+      if (currentSession && !wasLoggedIn){
+        loadRemoteScores().then(function(){
+          if (state.screen === "select") renderSelect();
+          maybeResume();
+        });
+      } else {
+        if (state.screen === "select") renderSelect();
+        maybeResume();
+      }
     });
   }
 
@@ -459,6 +504,7 @@
     var percent = Math.round((state.score / total) * 100);
     var pass = percent >= PASS_THRESHOLD;
     setBest(state.catKey, percent);
+    saveResult(state.catKey, state.score, total, percent);
 
     var html = '<div class="result-card">' +
       '<div class="eyebrow" style="justify-content:center;">' + esc(state.cat.label) + '</div>' +

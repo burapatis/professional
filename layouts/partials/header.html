@@ -17,6 +17,9 @@
       <a href="{{ "knowledge/" | relURL }}"{{ if eq $nav "knowledge" }} class="active" aria-current="page"{{ end }}>คลังความรู้</a>
       <a href="{{ "articles/" | relURL }}"{{ if eq $nav "articles" }} class="active" aria-current="page"{{ end }}>บทความ</a>
       <a href="{{ "testbank/" | relURL }}"{{ if eq $nav "testbank" }} class="active" aria-current="page"{{ end }}>คลังข้อสอบ</a>
+      <a class="nav-search" href="{{ "search/" | relURL }}"{{ if eq $nav "search" }} class="active" aria-current="page"{{ end }} aria-label="ค้นหา">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </a>
     </div>
     <button class="menubtn" id="menubtn" aria-label="เปิดเมนู" aria-expanded="false" aria-controls="mobilenav"><span></span><span></span><span></span></button>
   </nav>
@@ -29,5 +32,6 @@
     <a href="{{ "knowledge/" | relURL }}" style="padding:10px 0;">คลังความรู้</a>
     <a href="{{ "articles/" | relURL }}" style="padding:10px 0;">บทความ</a>
     <a href="{{ "testbank/" | relURL }}" style="padding:10px 0;border-top:1px solid var(--line);">คลังข้อสอบ</a>
+    <a href="{{ "search/" | relURL }}" style="padding:10px 0;">ค้นหา</a>
   </div>
 </header>

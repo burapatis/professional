@@ -1,0 +1,53 @@
+{{ define "pagecss" }}
+<link rel="stylesheet" href="{{ "css/articles.css" | absURL }}">
+<link rel="stylesheet" href="{{ "pagefind/pagefind-ui.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/search.css" | absURL }}">
+{{ end }}
+
+{{ define "main" }}
+
+<section class="pagehero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="{{ site.Home.RelPermalink }}">ครุจิต</a> / ค้นหา</div>
+    <div class="eyebrow">ค้นหาทั้งเว็บไซต์</div>
+    <h1>ค้นหาเนื้อหาในครุจิต</h1>
+    <p class="lead">พิมพ์คำที่ต้องการเพื่อค้นหาบทความ คลังความรู้ มาตรฐานวิชาชีพ จรรยาบรรณ และเนื้อหาอื่น ๆ ทั่วทั้งเว็บไซต์</p>
+  </div>
+</section>
+
+<section class="search-section">
+  <div class="wrap">
+    <div id="search"></div>
+    <div id="search-fallback" class="search-fallback" hidden>
+      ระบบค้นหาจะพร้อมใช้งานบนเว็บไซต์ที่เผยแพร่จริง หากคุณกำลังดูในเครื่องนักพัฒนา ดัชนีค้นหายังไม่ถูกสร้าง
+    </div>
+  </div>
+</section>
+
+<script src="{{ "pagefind/pagefind-ui.js" | relURL }}" onerror="document.getElementById('search-fallback').hidden=false;"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", function(){
+    if (!window.PagefindUI){
+      document.getElementById("search-fallback").hidden = false;
+      return;
+    }
+    new PagefindUI({
+      element: "#search",
+      bundlePath: "{{ "pagefind/" | relURL }}",
+      baseUrl: "{{ site.Home.RelPermalink }}",
+      showSubResults: true,
+      showImages: false,
+      translations: {
+        placeholder: "ค้นหาบทความ ความรู้ มาตรฐาน จรรยาบรรณ…",
+        clear_search: "ล้าง",
+        load_more: "ดูผลลัพธ์เพิ่มเติม",
+        search_label: "ค้นหาในเว็บไซต์นี้",
+        zero_results: "ไม่พบผลลัพธ์สำหรับ [SEARCH]",
+        many_results: "พบ [COUNT] ผลลัพธ์สำหรับ [SEARCH]",
+        one_result: "พบ [COUNT] ผลลัพธ์สำหรับ [SEARCH]"
+      }
+    });
+  });
+</script>
+
+{{ end }}
