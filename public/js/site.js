@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     mobilenav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
       mobilenav.style.display = 'none';
+      menubtn.setAttribute('aria-expanded', 'false');
     }));
   }
 
