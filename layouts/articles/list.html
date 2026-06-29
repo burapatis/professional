@@ -1,0 +1,40 @@
+{{ define "pagecss" }}
+<link rel="stylesheet" href="{{ "css/articles.css" | absURL }}">
+{{ end }}
+
+{{ define "main" }}
+
+<section class="pagehero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="{{ site.Home.RelPermalink }}">ครุจิต</a> / บทความ</div>
+    <div class="eyebrow">อ่านเพื่อเติมไฟในใจครู</div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+  </div>
+</section>
+
+<section id="articles-list">
+  <div class="wrap">
+    {{ $pages := .Pages.ByDate.Reverse }}
+    {{ if $pages }}
+    <div class="article-grid">
+      {{ range $pages }}
+      <a class="article-card reveal" href="{{ .RelPermalink }}">
+        {{ with .Params.category }}<span class="art-cat">{{ . }}</span>{{ end }}
+        <h2>{{ .Title }}</h2>
+        <p class="art-sum">{{ .Description | default (.Summary | plainify | truncate 160) }}</p>
+        <div class="art-meta">
+          {{ with .Date }}<time datetime="{{ .Format "2006-01-02" }}">{{ partial "thaidate.html" . }}</time>{{ end }}
+          <span class="dot">·</span><span>อ่าน ~{{ math.Ceil (div (countrunes .Plain) 350.0) }} นาที</span>
+        </div>
+        <span class="art-more">อ่านบทความ →</span>
+      </a>
+      {{ end }}
+    </div>
+    {{ else }}
+    <p class="art-empty">ยังไม่มีบทความเผยแพร่ในขณะนี้ โปรดแวะกลับมาใหม่เร็ว ๆ นี้</p>
+    {{ end }}
+  </div>
+</section>
+
+{{ end }}

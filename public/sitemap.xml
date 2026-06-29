@@ -2,32 +2,65 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1414/categories/</loc>
+    <loc>https://example.org/tags/</loc>
+    <lastmod>2026-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1414/tags/</loc>
+    <loc>https://example.org/</loc>
+    <lastmod>2026-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1414/about/</loc>
+    <loc>https://example.org/tags/%E0%B8%88%E0%B8%B4%E0%B8%95%E0%B8%A7%E0%B8%B4%E0%B8%8D%E0%B8%8D%E0%B8%B2%E0%B8%93%E0%B8%84%E0%B8%A3%E0%B8%B9/</loc>
+    <lastmod>2026-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1414/terms/</loc>
+    <loc>https://example.org/articles/spirit-of-teaching/</loc>
+    <lastmod>2026-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1414/</loc>
+    <loc>https://example.org/articles/</loc>
+    <lastmod>2026-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1414/testbank/</loc>
+    <loc>https://example.org/tags/%E0%B8%A7%E0%B8%B4%E0%B8%8A%E0%B8%B2%E0%B8%8A%E0%B8%B5%E0%B8%9E%E0%B8%84%E0%B8%A3%E0%B8%B9/</loc>
+    <lastmod>2026-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1414/knowledge/</loc>
+    <loc>https://example.org/tags/%E0%B8%AD%E0%B8%B8%E0%B8%94%E0%B8%A1%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%93%E0%B9%8C/</loc>
+    <lastmod>2026-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1414/ethics/</loc>
+    <loc>https://example.org/articles/inner-fire-of-teachers/</loc>
+    <lastmod>2026-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1414/privacy/</loc>
+    <loc>https://example.org/tags/%E0%B8%A0%E0%B8%B2%E0%B8%A7%E0%B8%B0%E0%B8%AB%E0%B8%A1%E0%B8%94%E0%B9%84%E0%B8%9F/</loc>
+    <lastmod>2026-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1414/standards/</loc>
+    <loc>https://example.org/tags/%E0%B8%AA%E0%B8%B8%E0%B8%82%E0%B8%A0%E0%B8%B2%E0%B8%A7%E0%B8%B0%E0%B8%84%E0%B8%A3%E0%B8%B9/</loc>
+    <lastmod>2026-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1414/international/</loc>
+    <loc>https://example.org/articles/lessons-from-wai-khru/</loc>
+    <lastmod>2026-06-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1414/help/</loc>
+    <loc>https://example.org/tags/%E0%B8%A3%E0%B8%B2%E0%B8%81%E0%B8%90%E0%B8%B2%E0%B8%99%E0%B8%AA%E0%B8%B5%E0%B9%88%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A3/</loc>
+    <lastmod>2026-06-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1414/pathway/</loc>
+    <loc>https://example.org/tags/%E0%B9%84%E0%B8%AB%E0%B8%A7%E0%B9%89%E0%B8%84%E0%B8%A3%E0%B8%B9/</loc>
+    <lastmod>2026-06-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1414/professionalism/</loc>
+    <loc>https://example.org/about/</loc>
+  </url><url>
+    <loc>https://example.org/terms/</loc>
+  </url><url>
+    <loc>https://example.org/testbank/</loc>
+  </url><url>
+    <loc>https://example.org/knowledge/</loc>
+  </url><url>
+    <loc>https://example.org/ethics/</loc>
+  </url><url>
+    <loc>https://example.org/privacy/</loc>
+  </url><url>
+    <loc>https://example.org/standards/</loc>
+  </url><url>
+    <loc>https://example.org/international/</loc>
+  </url><url>
+    <loc>https://example.org/help/</loc>
+  </url><url>
+    <loc>https://example.org/pathway/</loc>
+  </url><url>
+    <loc>https://example.org/professionalism/</loc>
   </url>
 </urlset>

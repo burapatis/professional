@@ -1,0 +1,68 @@
+{{ define "pagecss" }}
+<link rel="stylesheet" href="{{ "css/articles.css" | absURL }}">
+{{ end }}
+
+{{ define "main" }}
+
+<article>
+  <section class="pagehero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="{{ site.Home.RelPermalink }}">ครุจิต</a> / <a href="{{ "articles/" | relURL }}">บทความ</a> / {{ .Title }}</div>
+      {{ with .Params.category }}<div class="eyebrow">{{ . }}</div>{{ end }}
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+      <div class="art-meta">
+        {{ with .Date }}<time datetime="{{ .Format "2006-01-02" }}">{{ partial "thaidate.html" . }}</time>{{ end }}
+        <span class="dot">·</span><span>อ่าน ~{{ math.Ceil (div (countrunes .Plain) 350.0) }} นาที</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap article-wrap">
+      <div class="article-body">
+        {{ .Content }}
+      </div>
+
+      {{ with .Params.tags }}
+      <div class="article-tags">
+        {{ range . }}
+        <a class="art-tag" href="{{ (printf "tags/%s/" (. | urlize)) | relURL }}">#{{ . }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+
+      <div class="article-cta">
+        <p>หากบทความนี้เติมไฟในใจคุณได้ ลองสำรวจรากฐานและมาตรฐานของวิชาชีพครูต่อ</p>
+        <div class="cta-row">
+          <a href="{{ site.Home.RelPermalink }}#pillars" class="btn btn-primary">รากฐานสี่ประการ</a>
+          <a href="{{ "articles/" | relURL }}" class="btn btn-ghost">← กลับไปหน้าบทความ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{ $related := first 3 (where (where site.RegularPages "Section" "articles") "Permalink" "!=" .Permalink) }}
+  {{ with $related }}
+  <section class="section-deep" id="related">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">อ่านต่อ</div>
+        <h2>บทความอื่นที่คุณอาจสนใจ</h2>
+      </div>
+      <div class="article-grid">
+        {{ range . }}
+        <a class="article-card reveal" href="{{ .RelPermalink }}">
+          {{ with .Params.category }}<span class="art-cat">{{ . }}</span>{{ end }}
+          <h2>{{ .Title }}</h2>
+          <p class="art-sum">{{ .Description | default (.Summary | plainify | truncate 140) }}</p>
+          <span class="art-more">อ่านบทความ →</span>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+</article>
+
+{{ end }}

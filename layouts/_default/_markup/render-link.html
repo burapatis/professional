@@ -1,0 +1,6 @@
+{{- $u := .Destination -}}
+{{- $external := or (strings.HasPrefix $u "http://") (strings.HasPrefix $u "https://") (strings.HasPrefix $u "mailto:") -}}
+{{- if and (strings.HasPrefix $u "/") (not (strings.HasPrefix $u "//")) -}}
+{{- $u = printf "%s%s" site.Home.RelPermalink (strings.TrimPrefix "/" $u) -}}
+{{- end -}}
+<a href="{{ $u }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .Text | safeHTML }}</a>

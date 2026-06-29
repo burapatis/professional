@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Tags on ครุจิต — ศูนย์รวมหลักการและจิตวิญญาณวิชาชีพครูไทย</title>
-		<link>http://localhost:1414/tags/</link>
+		<link>https://example.org/tags/</link>
 		<description>Recent content in Tags on ครุจิต — ศูนย์รวมหลักการและจิตวิญญาณวิชาชีพครูไทย</description>
 		<generator>Hugo</generator>
 		<language>th-th</language>
@@ -10,6 +10,57 @@
 		
 		
 		
-			<atom:link href="http://localhost:1414/tags/index.xml" rel="self" type="application/rss+xml" />
+			<lastBuildDate>Sun, 28 Jun 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>จิตวิญญาณครู</title>
+				<link>https://example.org/tags/%E0%B8%88%E0%B8%B4%E0%B8%95%E0%B8%A7%E0%B8%B4%E0%B8%8D%E0%B8%8D%E0%B8%B2%E0%B8%93%E0%B8%84%E0%B8%A3%E0%B8%B9/</link>
+				<pubDate>Sun, 28 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>https://example.org/tags/%E0%B8%88%E0%B8%B4%E0%B8%95%E0%B8%A7%E0%B8%B4%E0%B8%8D%E0%B8%8D%E0%B8%B2%E0%B8%93%E0%B8%84%E0%B8%A3%E0%B8%B9/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>วิชาชีพครู</title>
+				<link>https://example.org/tags/%E0%B8%A7%E0%B8%B4%E0%B8%8A%E0%B8%B2%E0%B8%8A%E0%B8%B5%E0%B8%9E%E0%B8%84%E0%B8%A3%E0%B8%B9/</link>
+				<pubDate>Sun, 28 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>https://example.org/tags/%E0%B8%A7%E0%B8%B4%E0%B8%8A%E0%B8%B2%E0%B8%8A%E0%B8%B5%E0%B8%9E%E0%B8%84%E0%B8%A3%E0%B8%B9/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>อุดมการณ์</title>
+				<link>https://example.org/tags/%E0%B8%AD%E0%B8%B8%E0%B8%94%E0%B8%A1%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%93%E0%B9%8C/</link>
+				<pubDate>Sun, 28 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>https://example.org/tags/%E0%B8%AD%E0%B8%B8%E0%B8%94%E0%B8%A1%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%93%E0%B9%8C/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>ภาวะหมดไฟ</title>
+				<link>https://example.org/tags/%E0%B8%A0%E0%B8%B2%E0%B8%A7%E0%B8%B0%E0%B8%AB%E0%B8%A1%E0%B8%94%E0%B9%84%E0%B8%9F/</link>
+				<pubDate>Sat, 20 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>https://example.org/tags/%E0%B8%A0%E0%B8%B2%E0%B8%A7%E0%B8%B0%E0%B8%AB%E0%B8%A1%E0%B8%94%E0%B9%84%E0%B8%9F/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>สุขภาวะครู</title>
+				<link>https://example.org/tags/%E0%B8%AA%E0%B8%B8%E0%B8%82%E0%B8%A0%E0%B8%B2%E0%B8%A7%E0%B8%B0%E0%B8%84%E0%B8%A3%E0%B8%B9/</link>
+				<pubDate>Sat, 20 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>https://example.org/tags/%E0%B8%AA%E0%B8%B8%E0%B8%82%E0%B8%A0%E0%B8%B2%E0%B8%A7%E0%B8%B0%E0%B8%84%E0%B8%A3%E0%B8%B9/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>รากฐานสี่ประการ</title>
+				<link>https://example.org/tags/%E0%B8%A3%E0%B8%B2%E0%B8%81%E0%B8%90%E0%B8%B2%E0%B8%99%E0%B8%AA%E0%B8%B5%E0%B9%88%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A3/</link>
+				<pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>https://example.org/tags/%E0%B8%A3%E0%B8%B2%E0%B8%81%E0%B8%90%E0%B8%B2%E0%B8%99%E0%B8%AA%E0%B8%B5%E0%B9%88%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A3/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>ไหว้ครู</title>
+				<link>https://example.org/tags/%E0%B9%84%E0%B8%AB%E0%B8%A7%E0%B9%89%E0%B8%84%E0%B8%A3%E0%B8%B9/</link>
+				<pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>https://example.org/tags/%E0%B9%84%E0%B8%AB%E0%B8%A7%E0%B9%89%E0%B8%84%E0%B8%A3%E0%B8%B9/</guid>
+				<description></description>
+			</item>
 	</channel>
 </rss>

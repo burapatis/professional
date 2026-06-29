@@ -1,61 +1,12 @@
-<!DOCTYPE html>
-<html lang="th">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1414&amp;path=livereload" data-no-instant defer></script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Categories — ครุจิต</title>
-<meta name="description" content="ครุจิต รวบรวมหลักการ มาตรฐานวิชาชีพ และจรรยาบรรณของวิชาชีพครูไทย บนรากฐานกฎหมายไทยและหลักการสากล เพื่อฟื้นฟูและยกระดับศักดิ์ศรีวิชาชีพครู">
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@500;600;700&family=Sarabun:wght@300;400;500;600;700&family=Mitr:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="http://localhost:1414/css/base.css">
+{{ define "pagecss" }}
+<link rel="stylesheet" href="{{ "css/legal.css" | absURL }}">
+{{ end }}
 
-<link rel="stylesheet" href="http://localhost:1414/css/legal.css">
-
-</head>
-<body>
-<a href="#main" class="skip">ไปยังเนื้อหาหลัก</a>
-
-<header class="site" id="top">
-  <nav class="bar">
-    <a href="/" class="brand">
-      <img class="brand-logo" src="/images/krujit-logo.png" width="128" height="128" alt="โลโก้ครุจิต">
-      <span>
-        <span class="name">ครุจิต</span>
-        <span class="tag">KRUJIT · SPIRIT OF TEACHING</span>
-      </span>
-    </a>
-    <div class="navlinks">
-      <a href="/#pillars">รากฐานสี่ประการ</a>
-      <a href="/standards/">มาตรฐานวิชาชีพ</a>
-      <a href="/ethics/">จรรยาบรรณ</a>
-      <a href="/pathway/">เส้นทางสู่วิชาชีพ</a>
-      <a href="/professionalism/">หลักวิชาการสากล</a>
-      <a href="/knowledge/">คลังความรู้</a>
-      <a href="/testbank/">คลังข้อสอบ</a>
-    </div>
-    <button class="menubtn" id="menubtn" aria-label="เปิดเมนู" aria-expanded="false" aria-controls="mobilenav"><span></span><span></span><span></span></button>
-  </nav>
-  <div id="mobilenav" style="display:none;flex-direction:column;gap:4px;padding:0 28px 22px;font-family:var(--utility);font-size:15px;">
-    <a href="/#pillars" style="padding:10px 0;border-bottom:1px solid var(--line)">รากฐานสี่ประการ</a>
-    <a href="/standards/" style="padding:10px 0;border-bottom:1px solid var(--line)">มาตรฐานวิชาชีพ</a>
-    <a href="/ethics/" style="padding:10px 0;border-bottom:1px solid var(--line)">จรรยาบรรณ</a>
-    <a href="/pathway/" style="padding:10px 0;border-bottom:1px solid var(--line)">เส้นทางสู่วิชาชีพ</a>
-    <a href="/professionalism/" style="padding:10px 0;border-bottom:1px solid var(--line)">หลักวิชาการสากล</a>
-    <a href="/knowledge/" style="padding:10px 0;">คลังความรู้</a>
-    <a href="/testbank/" style="padding:10px 0;border-top:1px solid var(--line);">คลังข้อสอบ</a>
-  </div>
-</header>
-
-
-<main id="main">
-  
+{{ define "main" }}
 
 <section class="pagehero">
   <div class="wrap">
-    <div class="breadcrumb"><a href="/">ครุจิต</a> / ข้อกำหนดการใช้งาน</div>
+    <div class="breadcrumb"><a href="{{ site.Home.RelPermalink }}">ครุจิต</a> / ข้อกำหนดการใช้งาน</div>
     <div class="eyebrow">เงื่อนไขการใช้เว็บไซต์</div>
     <h1>ข้อกำหนดการใช้งานเว็บไซต์</h1>
     <p class="lead">ข้อกำหนดนี้อธิบายเงื่อนไขการใช้งานเว็บไซต์ครุจิต โปรดอ่านทำความเข้าใจก่อนใช้งาน การเข้าใช้เว็บไซต์ถือว่าผู้ใช้ยอมรับข้อกำหนดเหล่านี้แล้ว</p>
@@ -66,7 +17,7 @@
 <section>
   <div class="wrap legal-prose">
     <h2>1. การยอมรับข้อกำหนด</h2>
-    <p>การเข้าชมหรือใช้งานเว็บไซต์ครุจิตถือว่าผู้ใช้ได้อ่าน เข้าใจ และยอมรับข้อกำหนดการใช้งานฉบับนี้ รวมถึง<a href="/privacy/">นโยบายความเป็นส่วนตัว</a> หากผู้ใช้ไม่ยอมรับข้อกำหนด โปรดยุติการใช้งานเว็บไซต์</p>
+    <p>การเข้าชมหรือใช้งานเว็บไซต์ครุจิตถือว่าผู้ใช้ได้อ่าน เข้าใจ และยอมรับข้อกำหนดการใช้งานฉบับนี้ รวมถึง<a href="{{ "privacy/" | relURL }}">นโยบายความเป็นส่วนตัว</a> หากผู้ใช้ไม่ยอมรับข้อกำหนด โปรดยุติการใช้งานเว็บไซต์</p>
 
     <h2>2. ลักษณะของเว็บไซต์</h2>
     <p>ครุจิตเป็น<strong>เว็บไซต์อิสระที่จัดทำโดยบุคคล</strong> เพื่อรวบรวมหลักการ มาตรฐาน จรรยาบรรณ และแรงบันดาลใจเกี่ยวกับวิชาชีพครู โดยมีวัตถุประสงค์เพื่อการศึกษาและการเผยแพร่ความรู้เท่านั้น</p>
@@ -106,39 +57,4 @@
   </div>
 </section>
 
-
-</main>
-
-
-  <footer class="site">
-  <div class="wrap">
-    <div class="foot-row">
-      <div class="foot-brand">
-        <svg aria-hidden="true" focusable="false" viewBox="0 0 200 200"><circle cx="100" cy="100" r="92" stroke="#FBF7EF" stroke-width="3" fill="none"/><circle cx="100" cy="100" r="78" stroke="#B6883A" stroke-width="1.6" fill="none"/><path d="M70 142 L130 142 L121 154 L79 154 Z" stroke="#FBF7EF" stroke-width="4" fill="none" stroke-linejoin="round"/><line x1="100" y1="142" x2="100" y2="122" stroke="#FBF7EF" stroke-width="4"/></svg>
-        <span class="name">ครุจิต</span>
-      </div>
-      <div class="foot-links">
-        <a href="/">หน้าหลัก</a>
-        <a href="/standards/">มาตรฐานวิชาชีพ</a>
-        <a href="/ethics/">จรรยาบรรณ</a>
-        <a href="/pathway/">เส้นทางสู่วิชาชีพ</a>
-        <a href="/professionalism/">หลักวิชาการสากล</a>
-        <a href="/international/">มาตรฐานนานาชาติ</a>
-        <a href="/knowledge/">คลังความรู้</a>
-        <a href="/testbank/">คลังข้อสอบ</a>
-        <a href="/about/">เกี่ยวกับผู้จัดทำ</a>
-        <a href="/help/">วิธีใช้งาน / FAQ</a>
-        <a href="/privacy/">นโยบายความเป็นส่วนตัว</a>
-        <a href="/terms/">ข้อกำหนดการใช้งาน</a>
-        <a href="https://forms.gle/PphtXmo4aPWEkjGW7" target="_blank" rel="noopener noreferrer">แจ้งความคลาดเคลื่อน</a>
-      </div>
-    </div>
-    <p class="foot-legal">© 2026 ครุจิต — เว็บไซต์อิสระจัดทำขึ้นเพื่อส่งเสริมจิตวิญญาณและมาตรฐานวิชาชีพครู มิใช่หน่วยงานราชการและไม่ได้เป็นส่วนหนึ่งของคุรุสภา ข้อมูลด้านกฎหมายอ้างอิงข้อบังคับคุรุสภาที่ประกาศใช้ โปรดตรวจสอบข้อมูลล่าสุดที่ ksp.or.th</p>
-  </div>
-</footer>
-
-
-
-<script src="http://localhost:1414/js/site.js"></script>
-</body>
-</html>
+{{ end }}
