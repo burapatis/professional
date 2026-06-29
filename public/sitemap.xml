@@ -2,26 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://example.org/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://example.org/tags/</loc>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://example.org/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://example.org/</loc>
   </url><url>
-    <loc>http://localhost:1313/testbank/</loc>
+    <loc>https://example.org/testbank/</loc>
   </url><url>
-    <loc>http://localhost:1313/knowledge/</loc>
+    <loc>https://example.org/knowledge/</loc>
   </url><url>
-    <loc>http://localhost:1313/ethics/</loc>
+    <loc>https://example.org/ethics/</loc>
   </url><url>
-    <loc>http://localhost:1313/standards/</loc>
+    <loc>https://example.org/standards/</loc>
   </url><url>
-    <loc>http://localhost:1313/international/</loc>
+    <loc>https://example.org/international/</loc>
   </url><url>
-    <loc>http://localhost:1313/pathway/</loc>
+    <loc>https://example.org/pathway/</loc>
   </url><url>
-    <loc>http://localhost:1313/professionalism/</loc>
+    <loc>https://example.org/professionalism/</loc>
   </url>
 </urlset>
