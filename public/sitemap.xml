@@ -8,6 +8,8 @@
   </url><url>
     <loc>https://example.org/about/</loc>
   </url><url>
+    <loc>https://example.org/terms/</loc>
+  </url><url>
     <loc>https://example.org/</loc>
   </url><url>
     <loc>https://example.org/testbank/</loc>
@@ -16,9 +18,13 @@
   </url><url>
     <loc>https://example.org/ethics/</loc>
   </url><url>
+    <loc>https://example.org/privacy/</loc>
+  </url><url>
     <loc>https://example.org/standards/</loc>
   </url><url>
     <loc>https://example.org/international/</loc>
+  </url><url>
+    <loc>https://example.org/help/</loc>
   </url><url>
     <loc>https://example.org/pathway/</loc>
   </url><url>

@@ -1,0 +1,89 @@
+{{ define "pagecss" }}
+<link rel="stylesheet" href="{{ "css/legal.css" | absURL }}">
+{{ end }}
+
+{{ define "main" }}
+
+<section class="pagehero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="{{ "/" | relURL }}">ครุจิต</a> / วิธีใช้งานและคำถามที่พบบ่อย</div>
+    <div class="eyebrow">เริ่มต้นใช้งาน</div>
+    <h1>วิธีใช้งานและคำถามที่พบบ่อย</h1>
+    <p class="lead">รวมวิธีเริ่มต้นใช้งานครุจิต และคำตอบของคำถามที่พบบ่อย เพื่อให้ใช้เว็บไซต์ได้เต็มประสิทธิภาพที่สุด</p>
+  </div>
+</section>
+
+<!-- GETTING STARTED -->
+<section id="start">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">เริ่มต้นใน 3 ขั้น</div>
+      <h2>เลือกเส้นทางที่ตรงกับคุณ</h2>
+      <p>ครุจิตจัดเนื้อหาไว้สำหรับผู้ใช้หลายกลุ่ม เริ่มจากจุดที่ตรงกับคุณได้ทันที</p>
+    </div>
+    <div class="start-grid">
+      <div class="start-card reveal">
+        <span class="step-n">1</span>
+        <h3>ผู้ที่อยากเป็นครู</h3>
+        <p>เริ่มที่<a href="{{ "pathway/" | relURL }}" style="color:var(--lacquer);text-decoration:underline;">เส้นทางสู่วิชาชีพครู</a> เพื่อดูขั้นตอนการเรียน การสอบ และการขอใบอนุญาต</p>
+      </div>
+      <div class="start-card reveal">
+        <span class="step-n">2</span>
+        <h3>ครูและผู้ประกอบวิชาชีพ</h3>
+        <p>ทบทวน<a href="{{ "standards/" | relURL }}" style="color:var(--lacquer);text-decoration:underline;">มาตรฐานวิชาชีพ</a> และ<a href="{{ "ethics/" | relURL }}" style="color:var(--lacquer);text-decoration:underline;">จรรยาบรรณ</a> แล้วฝึกทำ<a href="{{ "testbank/" | relURL }}" style="color:var(--lacquer);text-decoration:underline;">คลังข้อสอบ</a></p>
+      </div>
+      <div class="start-card reveal">
+        <span class="step-n">3</span>
+        <h3>ประชาชนและผู้สนใจ</h3>
+        <p>ทำความเข้าใจว่าทำไมครูจึงเป็นวิชาชีพชั้นสูง ผ่าน<a href="{{ "professionalism/" | relURL }}" style="color:var(--lacquer);text-decoration:underline;">หลักวิชาการสากล</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">คำถามที่พบบ่อย</div>
+      <h2>คำถามที่พบบ่อย (FAQ)</h2>
+      <p>แตะแต่ละคำถามเพื่อดูคำตอบ</p>
+    </div>
+    <div class="faq reveal">
+      <details class="faq-item">
+        <summary><span class="q">คลังข้อสอบฝึกฝนใช้งานอย่างไร</span><svg aria-hidden="true" focusable="false" class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <div class="faq-body"><p>เข้าหน้า<a href="{{ "testbank/" | relURL }}">คลังข้อสอบฝึกฝน</a> เลือกหมวดที่สนใจ แล้วตอบคำถามทีละข้อ ระบบจะเฉลยและอธิบายเหตุผลให้ทันทีหลังตอบแต่ละข้อ เหมาะกับการทบทวนเป็นรายหัวข้อ</p></div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="q">โหมดข้อสอบจำลอง (Mock Exam) คืออะไร ต่างจากการฝึกรายหมวดอย่างไร</span><svg aria-hidden="true" focusable="false" class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <div class="faq-body"><p>โหมดข้อสอบจำลองจะสุ่มข้อสอบ 50 ข้อ คละจากหลายด้านความรู้ตามสัดส่วนของผังการสร้างแบบทดสอบ โดย<strong>ยังไม่เฉลยระหว่างทำ</strong> ให้ทำต่อเนื่องจนครบเหมือนสถานการณ์สอบจริง แล้วจึงแสดงผลคะแนน สรุปแยกตามด้าน และคำอธิบายทั้งหมดเมื่อจบ ต่างจากการฝึกรายหมวดที่เฉลยทันทีทีละข้อ</p></div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="q">คะแนนสูงสุดของฉันถูกเก็บไว้ที่ไหน</span><svg aria-hidden="true" focusable="false" class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <div class="faq-body"><p>คะแนนสูงสุดถูกบันทึกไว้ใน localStorage ของเบราว์เซอร์ <strong>บนเครื่องของคุณเองเท่านั้น</strong> ไม่ได้ส่งออกไปยังเซิร์ฟเวอร์ หากเปลี่ยนเครื่อง เปลี่ยนเบราว์เซอร์ หรือล้างข้อมูลเว็บไซต์ คะแนนจะหายไป ดูรายละเอียดได้ที่<a href="{{ "privacy/" | relURL }}">นโยบายความเป็นส่วนตัว</a></p></div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="q">ข้อสอบในเว็บไซต์เป็นข้อสอบจริงของคุรุสภาหรือไม่</span><svg aria-hidden="true" focusable="false" class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <div class="faq-body"><p>ไม่ใช่ ข้อสอบทั้งหมดจัดทำขึ้นเองเพื่อการฝึกฝนและทดสอบความเข้าใจเบื้องต้นเท่านั้น ไม่ใช่ข้อสอบจริงหรือข้อสอบลับ และผลคะแนนไม่มีผลทางกฎหมายใด ๆ</p></div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="q">ข้อมูลกฎหมายในเว็บไซต์เป็นปัจจุบันแค่ไหน และควรตรวจสอบที่ใด</span><svg aria-hidden="true" focusable="false" class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <div class="faq-body"><p>ครุจิตอ้างอิงจากเอกสารทางการและตรวจสอบอย่างดีที่สุด แต่กฎหมายและหลักเกณฑ์อาจเปลี่ยนแปลงได้ ก่อนใช้อ้างอิงอย่างเป็นทางการ ควรตรวจสอบกับแหล่งทางการโดยตรง เช่น <a href="https://www.ksp.or.th" target="_blank" rel="noopener noreferrer">สำนักงานเลขาธิการคุรุสภา (ksp.or.th)</a> และราชกิจจานุเบกษา ดูเพิ่มเติมที่<a href="{{ "terms/" | relURL }}">ข้อกำหนดการใช้งาน</a></p></div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="q">ใช้งานบนโทรศัพท์มือถือได้หรือไม่</span><svg aria-hidden="true" focusable="false" class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <div class="faq-body"><p>ได้ เว็บไซต์ออกแบบให้แสดงผลแบบ responsive รองรับทั้งคอมพิวเตอร์ แท็บเล็ต และสมาร์ทโฟน</p></div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="q">พบข้อมูลผิดพลาดหรืออยากเสนอแนะ ทำอย่างไร</span><svg aria-hidden="true" focusable="false" class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <div class="faq-body"><p>ยินดีรับทุกข้อเสนอแนะ แจ้งได้ผ่าน<a href="https://forms.gle/PphtXmo4aPWEkjGW7" target="_blank" rel="noopener noreferrer">แบบฟอร์มแจ้งข้อมูล/เสนอแนะ</a> หรืออีเมล <a href="mailto:burapatis@gmail.com">burapatis@gmail.com</a> โดยตรง</p></div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="q">นำเนื้อหาในเว็บไซต์ไปใช้ต่อได้หรือไม่</span><svg aria-hidden="true" focusable="false" class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <div class="faq-body"><p>เนื้อหาที่ครุจิตเรียบเรียงขึ้นนำไปใช้เพื่อการศึกษาได้ โดยขอความร่วมมืออ้างอิงแหล่งที่มา ส่วนตัวบทกฎหมายและเอกสารทางการเป็นของหน่วยงานเจ้าของ ดูรายละเอียดที่<a href="{{ "terms/" | relURL }}">ข้อกำหนดการใช้งาน</a></p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+{{ end }}
