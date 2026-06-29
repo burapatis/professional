@@ -32,6 +32,8 @@
   try { if (window.supabase && window.supabase.createClient) sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); } catch(e){ sb = null; }
   var currentSession = null;
   var PENDING_KEY = "krujit_pending_quiz";
+  // ตั้งเป็น true เมื่อ Brevo เปิดสิทธิ์ส่งอีเมล (transactional) แล้ว เพื่อเปิดใช้ Magic Link อีกครั้ง
+  var MAGIC_LINK_ENABLED = false;
 
   var CATEGORIES = [
     { key: 1, label: "การเปลี่ยนแปลงบริบทของโลก สังคม และปรัชญาเศรษฐกิจพอเพียง", short: "บริบทโลก/เศรษฐกิจพอเพียง" },
@@ -279,19 +281,25 @@
     ov = document.createElement("div");
     ov.id = "tb-auth-modal";
     ov.className = "tb-modal-overlay show";
+    var subText = MAGIC_LINK_ENABLED
+      ? 'เข้าสู่ระบบก่อนเริ่มทำข้อสอบ เลือกใช้บัญชี Google หรือรับลิงก์เข้าสู่ระบบทางอีเมลก็ได้'
+      : 'เข้าสู่ระบบก่อนเริ่มทำข้อสอบ ด้วยบัญชี Google ของคุณ';
+    var magicHtml = MAGIC_LINK_ENABLED
+      ? ('<div class="tb-divider"><span>หรือ</span></div>' +
+         '<form class="tb-magic" id="tb-magic">' +
+           '<input type="email" id="tb-email" placeholder="กรอกอีเมลของคุณ" required autocomplete="email">' +
+           '<button type="submit" class="tb-btn-magic" id="tb-magic-btn">ส่งลิงก์เข้าสู่ระบบ</button>' +
+         '</form>')
+      : '';
     ov.innerHTML =
       '<div class="tb-modal" role="dialog" aria-modal="true" aria-labelledby="tb-modal-title">' +
         '<button class="tb-modal-close" id="tb-modal-close" aria-label="ปิด">×</button>' +
         '<h2 id="tb-modal-title">เข้าสู่ระบบเพื่อทำข้อสอบ</h2>' +
-        '<p class="tb-modal-sub">เข้าสู่ระบบก่อนเริ่มทำข้อสอบ เลือกใช้บัญชี Google หรือรับลิงก์เข้าสู่ระบบทางอีเมลก็ได้</p>' +
+        '<p class="tb-modal-sub">' + subText + '</p>' +
         '<button class="tb-btn-google" id="tb-google">' +
           '<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>' +
           'เข้าสู่ระบบด้วย Google</button>' +
-        '<div class="tb-divider"><span>หรือ</span></div>' +
-        '<form class="tb-magic" id="tb-magic">' +
-          '<input type="email" id="tb-email" placeholder="กรอกอีเมลของคุณ" required autocomplete="email">' +
-          '<button type="submit" class="tb-btn-magic" id="tb-magic-btn">ส่งลิงก์เข้าสู่ระบบ</button>' +
-        '</form>' +
+        magicHtml +
         '<div class="tb-auth-msg" id="tb-auth-msg"></div>' +
       '</div>';
     document.body.appendChild(ov);
@@ -303,11 +311,12 @@
       authMsg("กำลังพาไปยัง Google…");
       sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: redirectURL() } })
         .then(function(res){
-          if (res && res.error) authMsg("ยังเข้าสู่ระบบด้วย Google ไม่ได้ (" + res.error.message + ") — ลองใช้อีเมลแทนได้ครับ", "err");
+          if (res && res.error) authMsg("ยังเข้าสู่ระบบด้วย Google ไม่ได้ (" + res.error.message + ")", "err");
         });
     });
 
-    document.getElementById("tb-magic").addEventListener("submit", function(e){
+    var magicForm = document.getElementById("tb-magic");
+    if (magicForm) magicForm.addEventListener("submit", function(e){
       e.preventDefault();
       var email = (document.getElementById("tb-email").value || "").trim();
       if (!email) return;
@@ -317,8 +326,17 @@
       sb.auth.signInWithOtp({ email: email, options: { emailRedirectTo: redirectURL() } })
         .then(function(res){
           btn.disabled = false;
-          if (res && res.error) authMsg("ส่งลิงก์ไม่สำเร็จ: " + res.error.message, "err");
+          if (res && res.error){
+            var err = res.error;
+            var detail = err.message || err.code || err.status || JSON.stringify(err);
+            authMsg("ส่งลิงก์ไม่สำเร็จ: " + detail + " — ดู Supabase → Logs → Auth และตรวจ SMTP (Username/Password จาก Brevo)", "err");
+          }
           else authMsg("ส่งลิงก์ไปที่ " + email + " แล้ว เปิดอีเมลแล้วคลิกลิงก์เพื่อเข้าสู่ระบบได้เลย", "ok");
+        })
+        .catch(function(err){
+          btn.disabled = false;
+          var detail = (err && (err.message || err.code)) || String(err);
+          authMsg("ส่งลิงก์ไม่สำเร็จ: " + detail, "err");
         });
     });
   }
