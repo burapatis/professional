@@ -135,7 +135,7 @@
     html += '<button class="mock-card" id="tb-mock">' +
       '<div class="mock-card-main">' +
       '<span class="mock-eyebrow">โหมดข้อสอบจำลอง</span>' +
-      '<h3>สุ่มข้อสอบจำลองสนามสอบ</h3>' +
+      '<h2>สุ่มข้อสอบจำลองสนามสอบ</h2>' +
       '<p>สุ่ม ' + MOCK_SIZE + ' ข้อ คละ 5 ด้านความรู้ตามสัดส่วนผังการสร้างแบบทดสอบจริง ' +
       'ทำต่อเนื่องจนครบโดยยังไม่เฉลย แล้วดูผลและคำอธิบายทั้งหมดเมื่อจบ</p>' +
       '<span class="mock-meta">' +
@@ -159,7 +159,7 @@
       var best = getBest(cat.key);
       html += '<button class="category-card" data-cat="' + esc(String(cat.key)) + '">' +
         '<span class="num">' + (typeof cat.key === "number" ? "ด้านที่ " + cat.key : "จรรยาบรรณ") + '</span>' +
-        '<h3>' + esc(cat.label) + '</h3>' +
+        '<h2>' + esc(cat.label) + '</h2>' +
         '<span class="meta"><span>' + count + ' ข้อ</span>' +
         (best > 0 ? '<span class="best">คะแนนสูงสุด ' + best + '%</span>' : '<span></span>') +
         '</span></button>';

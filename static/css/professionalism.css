@@ -31,22 +31,22 @@ section{padding:80px 0;}
 .theory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
 .theory-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px;display:flex;flex-direction:column;gap:10px;}
 .theory-card .yr{font-family:var(--serif);font-size:22px;color:var(--gold);font-weight:700;}
-.theory-card h4{font-size:16px;}
+.theory-card h3{font-size:16px;}
 .theory-card p{font-size:13.5px;color:var(--ink-soft);}
 
 .criteria-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
 .crit-card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px 18px;}
 .crit-card .num{font-family:var(--utility);font-size:11px;color:var(--gold);font-weight:600;letter-spacing:.08em;}
-.crit-card h4{font-size:15px;margin:8px 0 6px;line-height:1.4;}
+.crit-card h3{font-size:15px;margin:8px 0 6px;line-height:1.4;}
 .crit-card p{font-size:13px;color:var(--ink-soft);}
 
 .debate-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
 .debate-col{border-radius:var(--radius);padding:28px 26px;}
 .debate-col.against{background:var(--lacquer-soft);border:1px solid rgba(124,46,40,.25);}
 .debate-col.for{background:var(--moss-soft);border:1px solid rgba(62,91,69,.25);}
-.debate-col h4{font-size:17px;margin-bottom:14px;}
-.debate-col.against h4{color:var(--lacquer);}
-.debate-col.for h4{color:var(--moss);}
+.debate-col h3{font-size:17px;margin-bottom:14px;}
+.debate-col.against h3{color:var(--lacquer);}
+.debate-col.for h3{color:var(--moss);}
 .debate-col ul{display:flex;flex-direction:column;gap:10px;}
 .debate-col li{font-size:14.5px;color:var(--ink);padding-left:18px;position:relative;}
 .debate-col li::before{content:"–";position:absolute;left:0;color:var(--ink-soft);}
@@ -55,7 +55,7 @@ section{padding:80px 0;}
 
 .principle-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
 .principle-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;}
-.principle-card h4{font-size:17px;margin-bottom:10px;}
+.principle-card h3{font-size:17px;margin-bottom:10px;}
 .principle-card p{font-size:14.5px;color:var(--ink-soft);}
 .principle-card .src{display:block;margin-top:12px;font-family:var(--utility);font-size:12px;color:var(--gold);}
 
@@ -69,7 +69,7 @@ section{padding:80px 0;}
 
 .next-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
 .next-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;gap:10px;}
-.next-card h4{font-size:18px;}
+.next-card h3{font-size:18px;}
 .next-card p{color:var(--ink-soft);font-size:14.5px;}
 
 footer.site{background:#16233A;color:var(--paper);padding:60px 0 30px;}

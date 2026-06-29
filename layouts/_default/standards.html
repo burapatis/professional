@@ -23,7 +23,7 @@
     </div>
     <div class="know-grid">
       {{ range .Site.Data.standards_knowledge }}
-      <div class="know-card reveal"><span class="n">{{ .num }}</span><h4>{{ .title }}</h4></div>
+      <div class="know-card reveal"><span class="n">{{ .num }}</span><h3>{{ .title }}</h3></div>
       {{ end }}
     </div>
   </div>
@@ -40,7 +40,7 @@
     <div class="perf-groups">
       {{ range .Site.Data.standards_performance }}
       <div class="perf-group reveal">
-        <h4>{{ .title }}</h4>
+        <h3>{{ .title }}</h3>
         <ul>
           {{ range .items }}
           <li>{{ . }}</li>
@@ -58,7 +58,7 @@
     <div class="conduct-box reveal">
       <div style="flex:1;min-width:260px;">
         <span class="eyebrow" style="color:var(--gold-soft);">มาตรฐานที่ 3</span>
-        <h3>การปฏิบัติตน</h3>
+        <h2>การปฏิบัติตน</h2>
         <p>คือจรรยาบรรณของวิชาชีพตามข้อบังคับคุรุสภาว่าด้วยจรรยาบรรณของวิชาชีพ พ.ศ. 2556 มีทั้งหมด 5 ด้าน 9 ข้อ ครอบคลุมความประพฤติต่อตนเอง ต่อวิชาชีพ ต่อผู้รับบริการ ต่อผู้ร่วมประกอบวิชาชีพ และต่อสังคม</p>
         <a href="{{ "ethics/" | relURL }}" class="btn btn-light" style="border-color:rgba(251,247,239,.55);color:#FBF7EF;">อ่านจรรยาบรรณวิชาชีพฉบับเต็ม →</a>
       </div>
@@ -69,7 +69,7 @@
         <svg aria-hidden="true" focusable="false" viewBox="0 0 64 64"><g stroke="currentColor" stroke-width="2.4" fill="none"><circle cx="32" cy="32" r="20"/><ellipse cx="32" cy="32" rx="8" ry="20"/><line x1="12" y1="32" x2="52" y2="32"/></g></svg>
       </div>
       <div>
-        <h4>หลักการสากล: ครูที่เชี่ยวชาญในมุมมองโลก</h4>
+        <h3>หลักการสากล: ครูที่เชี่ยวชาญในมุมมองโลก</h3>
         <p>หลักการของ National Board for Professional Teaching Standards (NBPTS) สหรัฐอเมริกา ระบุข้อกำหนดหลัก 5 ประการของครูที่เชี่ยวชาญไว้อย่างกระชับ: ผูกพันกับผู้เรียนและการเรียนรู้ของพวกเขา รู้เนื้อหาวิชาและวิธีสอนอย่างลึกซึ้ง รับผิดชอบต่อการจัดการและติดตามผลการเรียนรู้ คิดอย่างเป็นระบบและเรียนรู้จากประสบการณ์ของตนเองอยู่เสมอ และเป็นสมาชิกที่ดีของชุมชนแห่งการเรียนรู้ — แนวคิดเหล่านี้สอดคล้องกับมาตรฐานทั้ง 3 ด้านของไทยอย่างชัดเจน</p>
         <span class="src">อ้างอิงแนวคิดจาก NBPTS, สหรัฐอเมริกา · <a href="{{ "professionalism/" | relURL }}" style="color:var(--gold);text-decoration:underline;">อ่านหลักวิชาการสากลฉบับเต็ม →</a></span>
       </div>
@@ -104,19 +104,19 @@
     </div>
     <div class="next-grid">
       <a class="next-card reveal" href="{{ "ethics/" | relURL }}">
-        <h4>จรรยาบรรณวิชาชีพครู →</h4>
+        <h3>จรรยาบรรณวิชาชีพครู →</h3>
         <p>อ่านจรรยาบรรณวิชาชีพครูฉบับเต็ม 5 ด้าน 9 ข้อ พร้อมความหมายของแต่ละด้าน</p>
       </a>
       <a class="next-card reveal" href="{{ "pathway/" | relURL }}">
-        <h4>เส้นทางสู่วิชาชีพครู →</h4>
+        <h3>เส้นทางสู่วิชาชีพครู →</h3>
         <p>สำหรับผู้สนใจเป็นครู: เรียนที่ไหน สอบอะไร ใช้ทุนอะไร และต้องทำอะไรหลังเรียนจบ</p>
       </a>
       <a class="next-card reveal" href="{{ "professionalism/" | relURL }}">
-        <h4>หลักวิชาการสากลว่าด้วยวิชาชีพ →</h4>
+        <h3>หลักวิชาการสากลว่าด้วยวิชาชีพ →</h3>
         <p>ดูที่มาทางทฤษฎีของมาตรฐานเหล่านี้ และข้อถกเถียงว่าครูเป็นวิชาชีพเต็มรูปแบบหรือไม่</p>
       </a>
       <a class="next-card reveal" href="{{ "/" | relURL }}#pillars">
-        <h4>รากฐานสี่ประการของวิชาชีพครู →</h4>
+        <h3>รากฐานสี่ประการของวิชาชีพครู →</h3>
         <p>ย้อนดูความหมายของเข็ม ข้าวตอก หญ้าแพรก และดอกมะเขือ ที่เชื่อมโยงกับมาตรฐานเหล่านี้</p>
       </a>
     </div>

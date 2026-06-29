@@ -37,7 +37,7 @@ details.domain .body p{color:var(--ink-soft);font-size:15px;margin-bottom:16px;}
 
 .plc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
 .plc-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;}
-.plc-card h4{font-size:17px;margin-bottom:10px;}
+.plc-card h3{font-size:17px;margin-bottom:10px;}
 .plc-card p{font-size:14.5px;color:var(--ink-soft);}
 .plc-card ul{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
 .plc-card li{font-size:14px;color:var(--ink);padding-left:16px;position:relative;}
@@ -51,7 +51,7 @@ details.domain .body p{color:var(--ink-soft);font-size:15px;margin-bottom:16px;}
 
 .next-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
 .next-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;gap:10px;}
-.next-card h4{font-size:18px;}
+.next-card h3{font-size:18px;}
 .next-card p{color:var(--ink-soft);font-size:14.5px;}
 
 footer.site{background:#16233A;color:var(--paper);padding:60px 0 30px;}

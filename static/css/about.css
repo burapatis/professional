@@ -13,7 +13,7 @@ section{padding:80px 0;}
 
 .profile{display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start;}
 .avatar{width:180px;height:180px;}
-.profile h3{font-size:26px;margin-bottom:6px;}
+.profile h2{font-size:26px;margin-bottom:6px;}
 .profile .role{font-family:var(--utility);font-size:14px;color:var(--lacquer);font-weight:600;margin-bottom:18px;}
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px;}
 .chip{font-family:var(--utility);font-size:13px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;color:var(--ink);}
@@ -33,12 +33,12 @@ section{padding:80px 0;}
 
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
 .why-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;}
-.why-card h4{font-size:17px;margin-bottom:10px;}
+.why-card h3{font-size:17px;margin-bottom:10px;}
 .why-card p{font-size:14.5px;color:var(--ink-soft);}
 
 .next-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
 .next-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;gap:10px;}
-.next-card h4{font-size:18px;}
+.next-card h3{font-size:18px;}
 .next-card p{color:var(--ink-soft);font-size:14.5px;}
 
 footer.site{background:#16233A;color:var(--paper);padding:60px 0 30px;}
