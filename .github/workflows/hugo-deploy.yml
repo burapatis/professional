@@ -45,7 +45,7 @@ jobs:
         run: |
           hugo \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --baseURL "https://krujit.com/"
 
       - name: สร้างดัชนีค้นหา (Pagefind)
         run: npx -y pagefind@latest --site public
