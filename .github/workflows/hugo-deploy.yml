@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout โค้ด
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           submodules: recursive
           fetch-depth: 0
@@ -36,7 +36,7 @@ jobs:
 
       - name: ตั้งค่า GitHub Pages
         id: pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Build ด้วย Hugo
         env:
@@ -48,7 +48,7 @@ jobs:
             --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: อัปโหลดผลลัพธ์ build
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./public
 
@@ -61,4 +61,4 @@ jobs:
     steps:
       - name: Deploy ไป GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
