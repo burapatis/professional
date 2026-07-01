@@ -18,6 +18,8 @@ section{padding:96px 0;}
 .section-head{max-width:680px;margin-bottom:54px;}
 .section-head h2{font-size:clamp(28px,3.4vw,40px);line-height:1.28;}
 .section-head p{color:var(--ink-soft);font-size:17px;margin-top:18px;}
+.roadmap-note{font-size:15.5px;line-height:1.65;margin-top:14px;padding:14px 18px;background:rgba(182,136,58,.1);border:1px solid rgba(182,136,58,.28);border-radius:12px;}
+.roadmap-note a{color:var(--lacquer);text-decoration:underline;}
 
 /* PILLARS */
 .pillars-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
