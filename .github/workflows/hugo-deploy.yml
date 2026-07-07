@@ -39,6 +39,7 @@ jobs:
         uses: actions/configure-pages@v6
 
       - name: ดึงจำนวนผู้เข้าชมจาก Cloudflare Web Analytics
+        id: cf_analytics
         continue-on-error: true
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -47,6 +48,32 @@ jobs:
           CLOUDFLARE_ANALYTICS_LOOKBACK_DAYS: "175"
           CLOUDFLARE_ANALYTICS_SINCE_YEAR: "2025"
         run: bash scripts/fetch-cf-analytics.sh
+
+      - name: สรุปผลดึงข้อมูลผู้เข้าชม
+        if: always()
+        run: |
+          {
+            echo "## Cloudflare Web Analytics"
+            if [[ -f data/.analytics-fetch-status ]]; then
+              echo '```yaml'
+              cat data/.analytics-fetch-status
+              echo '```'
+            else
+              echo "_ไม่พบไฟล์สถานะ — ขั้นตอนดึงข้อมูลอาจไม่ได้รัน_"
+            fi
+            if [[ -f data/analytics.yaml ]]; then
+              echo
+              echo "### ข้อมูลที่จะใช้ใน footer"
+              echo '```yaml'
+              cat data/analytics.yaml
+              echo '```'
+            fi
+            if [[ "${{ steps.cf_analytics.outcome }}" != "success" ]]; then
+              echo
+              echo "::warning title=ตัวนับผู้เข้าชม::ดึงข้อมูลจาก Cloudflare ไม่สำเร็จ — footer จะใช้ตัวเลขเดิมใน data/analytics.yaml"
+              echo "⚠️ ดึงข้อมูลจาก Cloudflare ไม่สำเร็จ — ตรวจ log ขั้นตอนก่อนหน้า (มักเป็น API token ไม่มีสิทธิ์ Analytics: Read)"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Build ด้วย Hugo
         env:

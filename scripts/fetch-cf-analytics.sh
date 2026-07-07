@@ -6,12 +6,27 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 OUT="$ROOT/data/analytics.yaml"
+STATUS_FILE="${CLOUDFLARE_ANALYTICS_STATUS_FILE:-$ROOT/data/.analytics-fetch-status}"
 HUGO_CONFIG="$ROOT/hugo.toml"
 CHUNK_DAYS="${CLOUDFLARE_ANALYTICS_CHUNK_DAYS:-84}"
 
+write_status() {
+  local status="$1"
+  local message="$2"
+  mkdir -p "$(dirname "$STATUS_FILE")"
+  cat > "$STATUS_FILE" <<YAML
+status: ${status}
+message: "${message}"
+updatedAt: "$(utc_now)"
+YAML
+}
+
 warn_skip() {
-  echo "$1" >&2
-  echo "Skipping visitor count fetch — site deploy continues." >&2
+  local reason="$1"
+  echo "::warning title=Cloudflare Analytics::${reason}" 2>/dev/null || true
+  echo "ERROR: ${reason}" >&2
+  echo "Skipping visitor count fetch — site deploy continues with existing data/analytics.yaml." >&2
+  write_status "skipped" "$reason"
   exit 0
 }
 
@@ -53,6 +68,39 @@ cf_api() {
     "${@:2}"
 }
 
+verify_token() {
+  local response status
+  response=$(curl -fsS "https://api.cloudflare.com/client/v4/user/tokens/verify" \
+    -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" || true)
+
+  if ! echo "$response" | jq -e '.success == true' >/dev/null 2>&1; then
+    echo "Cloudflare token verify response:" >&2
+    echo "$response" | jq '.' >&2 || echo "$response" >&2
+    warn_skip "CLOUDFLARE_API_TOKEN is invalid or expired."
+  fi
+
+  status=$(echo "$response" | jq -r '.result.status // "unknown"')
+  echo "Cloudflare API token verified (status: ${status})"
+}
+
+print_graphql_errors() {
+  local response="$1"
+  local context="$2"
+
+  echo "ERROR: Cloudflare GraphQL failed during ${context}." >&2
+  echo "$response" | jq '.errors' >&2 || echo "$response" >&2
+
+  if echo "$response" | jq -e '.errors[]? | select(.message | test("not authorized"; "i"))' >/dev/null 2>&1; then
+    cat >&2 <<HINT
+HINT: API Token ไม่มีสิทธิ์อ่าน Web Analytics ของ account นี้ หรือ CLOUDFLARE_ACCOUNT_ID ไม่ตรงกับบัญชีที่มี krujit.com
+  • Cloudflare → My Profile → API Tokens → ต้องมีสิทธิ์ Account → Analytics: Read
+  • ตรวจ Account ID ในหน้า Overview ของบัญชีที่ลงทะเบียน Web Analytics สำหรับ krujit.com
+  • อัปเดต GitHub Secrets แล้วรัน workflow ใหม่
+  • ทดสอบในเครื่อง: CLOUDFLARE_API_TOKEN=... CLOUDFLARE_ACCOUNT_ID=... bash scripts/test-cf-analytics.sh
+HINT
+  fi
+}
+
 read_beacon_token() {
   if [[ -n "${CLOUDFLARE_WEB_ANALYTICS_BEACON_TOKEN:-}" ]]; then
     echo "$CLOUDFLARE_WEB_ANALYTICS_BEACON_TOKEN"
@@ -85,6 +133,8 @@ resolve_site_tag() {
 
   if [[ -z "$site_tag" ]]; then
     echo "ไม่พบ site_tag ที่ตรงกับ beacon token ใน hugo.toml" >&2
+    echo "Sites visible to this token:" >&2
+    echo "$response" | jq -r '(.result // [])[] | "- \(.site_tag) host=\(.host // "n/a") token=\(.site_token // "n/a")"' >&2
     return 1
   fi
 
@@ -142,7 +192,7 @@ GQL
     --data-binary "$payload" || true)
 
   if echo "$response" | jq -e '.errors | length > 0' >/dev/null 2>&1; then
-    echo "$response" | jq '.errors' >&2
+    print_graphql_errors "$response" "chunk ${range_start} → ${range_end}"
     return 1
   fi
 
@@ -154,8 +204,11 @@ GQL
 }
 
 if [[ -z "${CLOUDFLARE_API_TOKEN:-}" || -z "${CLOUDFLARE_ACCOUNT_ID:-}" ]]; then
-  warn_skip "Cloudflare analytics secrets not set."
+  warn_skip "Cloudflare analytics secrets not set (CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID)."
 fi
+
+echo "Cloudflare account id: ${CLOUDFLARE_ACCOUNT_ID}"
+verify_token
 
 SITE_TAG="${CLOUDFLARE_WEB_ANALYTICS_SITE_TAG:-}"
 if [[ -z "$SITE_TAG" ]]; then
@@ -168,6 +221,8 @@ if [[ -z "$SITE_TAG" ]]; then
     warn_skip "Could not resolve site_tag from Cloudflare API."
   fi
   echo "Using site_tag: ${SITE_TAG}"
+else
+  echo "Using site_tag from secret: ${SITE_TAG}"
 fi
 
 FOUNDING_YEAR="${CLOUDFLARE_ANALYTICS_SINCE_YEAR:-2025}"
@@ -220,6 +275,8 @@ updatedAt: "${UPDATED_AT}"
 since: "${RANGE_START}"
 periodDays: ${LOOKBACK_DAYS}
 source: cloudflare-web-analytics
+siteTag: "${SITE_TAG}"
 YAML
 
+write_status "ok" "visits=${TOTAL_VISITS}, pageViews=${TOTAL_PAGEVIEWS}"
 echo "Visitor stats written: visits=${TOTAL_VISITS}, pageViews=${TOTAL_PAGEVIEWS} (${CHUNK_NUM} chunks)"
