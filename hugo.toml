@@ -6,6 +6,7 @@ enableRobotsTXT = true
 [params]
   description = "ครุจิต รวบรวมหลักการ มาตรฐานวิชาชีพ และจรรยาบรรณของวิชาชีพครูไทย บนรากฐานกฎหมายไทยและหลักการสากล เพื่อฟื้นฟูและยกระดับศักดิ์ศรีวิชาชีพครู"
   ogImage = "images/hero-waikhru.jpg"
+  cloudflareAnalytics = "7a00590c62b84ae89e8f2b24ff78c7b8"
 
 [taxonomies]
   tag = "tags"
