@@ -1,0 +1,7 @@
+# อัปเดตอัตโนมัติโดย scripts/fetch-cf-analytics.sh — ไม่ต้องแก้มือ
+visits: 0
+pageViews: 0
+updatedAt: "2026-07-07T00:00:00Z"
+since: "2026-01-01T00:00:00Z"
+periodDays: 175
+source: cloudflare-web-analytics

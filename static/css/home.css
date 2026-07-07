@@ -109,7 +109,8 @@ footer.site .mission{color:rgba(251,247,239,.7);font-size:14.5px;max-width:280px
 .foot-col a{font-size:14.5px;color:rgba(251,247,239,.85);}
 .foot-col a:hover{color:var(--gold-soft);}
 .foot-col .soon{font-size:14.5px;color:rgba(251,247,239,.4);}
-.foot-legal{padding-top:26px;font-size:13px;color:rgba(251,247,239,.5);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.foot-legal{padding-top:26px;font-size:13px;color:rgba(251,247,239,.5);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+.foot-legal-copy{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;flex:1 1 280px;}
 
 @media (max-width:980px){
   .hero .wrap{grid-template-columns:1fr;}

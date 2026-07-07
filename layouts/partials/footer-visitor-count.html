@@ -1,0 +1,17 @@
+{{- $stats := site.Data.analytics -}}
+{{- if and site.Params.showVisitorCount (ne $stats.visits nil) -}}
+<p class="foot-visitor-count" title="จาก Cloudflare Web Analytics · อัปเดตทุกครั้งที่ deploy">
+  <span class="foot-visitor-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <path d="M16 19v-1.5A3.5 3.5 0 0 0 12.5 14h-1A3.5 3.5 0 0 0 8 17.5V19"/>
+      <circle cx="12" cy="8" r="3.5"/>
+      <path d="M5.5 19v-.8a2.8 2.8 0 0 1 2.8-2.8"/>
+      <circle cx="6.2" cy="9.8" r="2.3"/>
+      <path d="M18.5 19v-.8a2.8 2.8 0 0 0-2.3-2.75"/>
+      <circle cx="17.8" cy="9.8" r="2.3"/>
+    </svg>
+  </span>
+  <span class="foot-visitor-label">ผู้เข้าชม (6 เดือนล่าสุด):</span>
+  <span class="foot-visitor-number">{{ $stats.visits | lang.FormatNumber 0 }}</span>
+</p>
+{{- end -}}

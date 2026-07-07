@@ -38,6 +38,16 @@ jobs:
         id: pages
         uses: actions/configure-pages@v6
 
+      - name: ดึงจำนวนผู้เข้าชมจาก Cloudflare Web Analytics
+        continue-on-error: true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_WEB_ANALYTICS_SITE_TAG: ${{ secrets.CLOUDFLARE_KRUJIT_WEB_ANALYTICS_SITE_TAG }}
+          CLOUDFLARE_ANALYTICS_LOOKBACK_DAYS: "175"
+          CLOUDFLARE_ANALYTICS_SINCE_YEAR: "2025"
+        run: bash scripts/fetch-cf-analytics.sh
+
       - name: Build ด้วย Hugo
         env:
           HUGO_ENVIRONMENT: production

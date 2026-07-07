@@ -95,6 +95,13 @@ nav.bar{
 .brand svg{width:40px;height:40px;flex-shrink:0;}
 .brand .brand-logo{width:44px;height:44px;flex-shrink:0;border-radius:50%;object-fit:cover;}
 .foot-brand .foot-logo{width:40px;height:40px;flex-shrink:0;border-radius:50%;object-fit:cover;}
+footer.site .foot-legal{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px 24px;}
+footer.site .foot-legal-copy{margin:0;}
+footer.site .foot-legal p.foot-legal-copy{margin:0;}
+.foot-visitor-count{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:rgba(251,247,239,.65);margin:0;white-space:nowrap;}
+.foot-visitor-icon{display:inline-flex;opacity:.85;width:1rem;height:1rem;}
+.foot-visitor-icon svg{width:1rem;height:1rem;}
+.foot-visitor-number{font-variant-numeric:tabular-nums;font-weight:600;color:rgba(251,247,239,.85);}
 .brand .name{font-family:var(--serif);font-weight:700;font-size:21px;color:var(--ink);}
 .brand .tag{display:block;font-family:var(--utility);font-size:10.5px;letter-spacing:.12em;color:var(--ink-soft);font-weight:500;}
 .navlinks{display:flex;align-items:center;gap:18px;font-family:var(--utility);font-size:13.5px;font-weight:500;flex-wrap:wrap;}
